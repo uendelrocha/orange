@@ -6,21 +6,14 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/cadastro.css">
-    <link rel="stylesheet" href="css/fontawesome-free-web/css/all.css" />
+    <link rel="stylesheet" href="../css/fontawesome-free-web/css/all.css" />
     <script defer src="js/cadastro.js"></script>
+    <script defer src="../js/index.js"></script>    
 
 </head>
 <body>
-    <div class="cabecalho">
-        <div id="logo">
-            <h1>Orange</h1>
-        </div>
-        <div id="menu">
-            <div><a href="../principal/index.html"> Produtos</a></div>
-            <div><a href="../carrinho/index.html"> Carrinho</a></div>
-            <div><a href="../login/index.html"><button class="botoes">Login</button></a></div>
-        </div>
-    </div>
+    <div id="divCabecalho"></div>
+    <div id="corpo">
     <h1>Cadastro</h1>
     <form action="/cadastrar" method="post">
         <label for="nome">Nome:</label>
@@ -104,5 +97,7 @@
         <input type="number" name="idade" id="idade" required>
 
         <button type="submit" class="botoes">Enviar</button>
+    </div>
+        <div id="divRodape"></div>
     </body>
 </html>
