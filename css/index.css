@@ -36,6 +36,34 @@ a {
   text-decoration: none;
 }
 
+/* Estilos para botões */
+.botao {
+  background-color: var(--laranja);
+  color: var(--branco);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Estilos para botões de compra */
+.botao-compra {
+  background-color: var(--laranja);
+  color: var(--branco);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Estilos para botões de compra de produtos esgotados */
+.botao-compra.esgotado {
+  background-color: var(--vermelho);
+  color: var(--branco);
+  border: none;
+  padding: 10px 20px;
+  cursor: not-allowed;
+  /* Outros estilos desejados para botões de produtos esgotados */
+}
+
 a:hover {
   color: var(--laranja-claro);
 }
