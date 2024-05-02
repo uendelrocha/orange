@@ -64,6 +64,36 @@ a {
   /* Outros estilos desejados para botões de produtos esgotados */
 }
 
+/* Estilos para elementos do formulário */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--cinza);
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: var(--laranja);
+  color: var(--branco);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--laranja-claro);
+}
+
 a:hover {
   color: var(--laranja-claro);
 }
