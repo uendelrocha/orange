@@ -1,3 +1,54 @@
+
+
+:root {
+  /* Cores */
+  --laranja: #FFA500;
+  --laranja-claro: #FFD700;
+  --branco: #FFFFFF;
+  --preto: #000000;
+  --cinza: #CCCCCC;
+
+  /* Fonte */
+  --fonte-padrao: Arial, sans-serif;
+
+  /* Tamanhos */
+  --tamanho-titulo: 24px;
+}
+
+/* Estilos para menus */
+.menu {
+  background-color: var(--laranja);
+  color: var(--branco);
+}
+
+/* Estilos para cards */
+.card {
+  background-color: var(--laranja-claro);
+  border: 1px solid var(--laranja);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Estilos para links */
+a {
+  color: var(--laranja);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--laranja-claro);
+}
+
+/* Outros estilos globais */
+body {
+  font-family: var(--fonte-padrao);
+}
+
+h1, h2, h3 {
+  font-size: var(--tamanho-titulo);
+  color: var(--preto);
+}
+
 .cabecalho{
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +78,7 @@
     text-align: right;
     align-items: center;
     font-size: 20px;
-    background-color: white;
+   
 }
 
 #corpo{
