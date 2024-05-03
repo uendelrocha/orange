@@ -1,5 +1,6 @@
 const form = document.getElementById('form-cadastro');
 
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 

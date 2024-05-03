@@ -39,7 +39,7 @@ a {
 /* Estilos para botões */
 .botao {
   background-color: var(--laranja);
-  color: var(--branco);
+  color: var(--cinza);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -71,6 +71,7 @@ a:hover {
 /* Outros estilos globais */
 body {
   font-family: var(--fonte-padrao);
+  background-color: var(--branco);
 }
 
 h1, h2, h3 {
@@ -86,8 +87,8 @@ h1, h2, h3 {
     justify-content: center;
     align-content: center;
     text-align: center;
-    background-color: white;
-    color: orange;
+    background-color: var(--branco);
+    color: var(--laranja)
 }
 
 #logo{
@@ -96,7 +97,7 @@ h1, h2, h3 {
     justify-content: left;
     align-content: space-around;
     text-align: center;
-    background-color: white;
+    background-color: var(--branco)
 }
 
 #menu{
@@ -118,7 +119,7 @@ h1, h2, h3 {
     justify-content: center;
     align-content: flex-start;
     text-align: center;
-    background-color:white;
+    background-color: var(--branco)
 }
 
 #rodape{
@@ -129,18 +130,18 @@ h1, h2, h3 {
     justify-content: flex-end;
     align-content: center;
     text-align: center;
-    background-color: yellow;
+    background-color: var(--laranja-claro)
 }
 
 .botoes{
-    background-color: orange;
+
+    background-color: var(--laranja)
     height: 37px;
     width: 100px;
-    color: #fff;
-    border: none;
-    font-size: 14px;
+    color: var(--preto);
+    border: 1 ;
+    font-size: 18px;
     align-items: center;
-    
 }
 
 .input-text{
