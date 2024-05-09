@@ -27,7 +27,22 @@ body {
     display: block; /* Ensures labels occupy full width */
     margin-bottom: 5px;
   }
-  
+
+.form-input {
+  padding: 10px;
+  border: solid 1px gray;
+  border-radius: 3px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  box-shadow: 10px 2px 0px black;
+}
+
+
+
   input,
   select {
     border: 1px solid var(--cinza);
