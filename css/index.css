@@ -18,6 +18,7 @@
 
 /* Estilos para menus */
 .menu {
+  margin-right: 10px; 
   background-color: var(--laranja);
   color: var(--branco);
 }
@@ -81,6 +82,7 @@ h1, h2, h3 {
 }
 
 .cabecalho{
+    margin-right: 10px; 
     display: flex;
     flex-wrap: wrap;
     width: 100%;    
