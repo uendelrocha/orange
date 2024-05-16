@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('userData', JSON.stringify(user));
 
         // redireciona para uma pagina de sucesso
-        window.location.href = '/cadastro/sucesso.html';
+        window.location.href = '../cadastro/sucesso.html';
     });
 });
 
