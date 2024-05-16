@@ -1,12 +1,16 @@
 const form = document.getElementById('form-cadastro');
 
-
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const data = new FormData(form);
 
-    fetch('/cadastrar', {
+    // Save form data to sessionStorage
+    for (let [key, value] of data.entries()) {
+        sessionStorage.setItem(key, value);
+    }
+
+    fetch('/cadastrar.php', {
         method: 'POST',
         body: data,
     }).then((response) => {
