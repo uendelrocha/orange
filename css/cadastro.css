@@ -1,59 +1,101 @@
 body {
-    margin: 0;
+    margin: 1;
     padding: 20px;
-    background-color: white;
-}
+    background-color: Var(--branco);
+  }
+  
+  div {
+    margin-top: 0px; /* Top margin only */
+    margin-bottom: 20px; /* Bottom margin only */
+  }
 
-h1 {
-    color: #000000;
+  h1 {
+    color: Var(--preto);
     font-size: 24px;
     margin-top: 0;
-}
-
-h2 {
-    color: #000000;
+  }
+  
+  h2 {
+    color: Var(--preto);
     font-size: 18px;
     margin-top: 20px;
-}
-
-label {
-    color: #000000;
+  }
+  
+  label {
+    color: Var(--preto);
     font-size: 14px;
+    display: block; /* Ensures labels occupy full width */
     margin-bottom: 5px;
+  }
+
+.form-input {
+  padding: 10px;
+  border: solid 1px gray;
+  border-radius: 3px;
 }
 
-input,
-select {
-    border: 1px solid #ccc;
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  box-shadow: 10px 2px 0px rgb(47, 46, 46);
+}
+
+
+
+  input,
+  select {
+    border: 1px solid var(--cinza);
     border-radius: 4px;
-    padding: 8px;
+    padding: 5px; /* Reduced padding for smaller fields */
     font-size: 14px;
-    width: 100%;
-}
-
-input[type="submit"] {
-    background-color: #ff8c00;
-    color: #ffffff;
+    width: 60%;
+  }
+  
+  input[type="submit"] {
+    background-color: var(--laranja);
+    color: var(--branco);
     font-size: 14px;
     font-weight: bold;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.2s;
-    margin-top: 20px;
-}
-
-input[type="submit"]:hover {
-    background-color: #000000;
-}
-
-.container {
+    margin-top: 30px;
+    
+  }
+  
+  input[type="submit"]:hover {
+    background-color:Var(--laranja-claro);
+    color: var(--laranja)
+  }
+  
+  .container {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-}
+  }
+  
+  .input-container {
+    display: flex; /* Enable Flexbox */
+    align-items: center; /* Align items vertically */
+  }
 
-.campo {
-    margin-bottom: 10px;
-}
+  .campo {
+    margin-bottom: 10px; /* Increased spacing between fields */
+  }
+
+  .corpo{
+    display: flexbox;
+    flex-wrap: wrap;
+    width: 60%;
+    height: 80%;
+    justify-content: left;
+    align-content: flex-start;
+    text-align: left;
+    background-color: var(--branco);
+
+  }
+
+  

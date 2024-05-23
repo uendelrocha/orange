@@ -2,11 +2,11 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/index.css"> 
     <link rel="stylesheet" href="../css/cadastro.css">
-    <link rel="stylesheet" href="../css/fontawesome-free-web/css/all.css" />
+    <link rel="stylesheet" href="../css/fontawesome-free-web/css/all.css" /> 
     <script defer src="js/cadastro.js"></script>
     <script defer src="../js/index.js"></script>    
 
@@ -92,12 +92,17 @@
             <option value="feminino">Feminino</option>
             <option value="nao_binario">Não-binário</option>
         </select>
+        
+        
+            <label for="idade">Idade:</label>
+            <input type="number" name="idade" id="idade" required>
+            <div id="nada">  </div>
+        <div>
+            <button type="submit" class="botoes"> Enviar </button>
+        </div>
 
-        <label for="idade">Idade:</label>
-        <input type="number" name="idade" id="idade" required>
-
-        <button type="submit" class="botoes">Enviar</button>
     </div>
+        <div id="nada">  </div>
         <div id="divRodape"></div>
     </body>
 </html>

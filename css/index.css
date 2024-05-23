@@ -18,6 +18,7 @@
 
 /* Estilos para menus */
 .menu {
+  margin-right: 10px; 
   background-color: var(--laranja);
   color: var(--branco);
 }
@@ -26,6 +27,7 @@
 .card {
   background-color: var(--laranja-claro);
   border: 1px solid var(--laranja);
+  box-shadow: 10px 2px 0px rgb(47, 46, 46);
   border-radius: 5px;
   padding: 20px;
 }
@@ -39,7 +41,7 @@ a {
 /* Estilos para botões */
 .botao {
   background-color: var(--laranja);
-  color: var(--branco);
+  color: var(--cinza);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -64,36 +66,6 @@ a {
   /* Outros estilos desejados para botões de produtos esgotados */
 }
 
-/* Estilos para elementos do formulário */
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid var(--cinza);
-  border-radius: 5px;
-}
-
-input[type="submit"] {
-  background-color: var(--laranja);
-  color: var(--branco);
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: var(--laranja-claro);
-}
-
 a:hover {
   color: var(--laranja-claro);
 }
@@ -101,6 +73,7 @@ a:hover {
 /* Outros estilos globais */
 body {
   font-family: var(--fonte-padrao);
+  background-color: var(--branco);
 }
 
 h1, h2, h3 {
@@ -109,6 +82,7 @@ h1, h2, h3 {
 }
 
 .cabecalho{
+    margin-right: 10px; 
     display: flex;
     flex-wrap: wrap;
     width: 100%;    
@@ -116,8 +90,8 @@ h1, h2, h3 {
     justify-content: center;
     align-content: center;
     text-align: center;
-    background-color: white;
-    color: orange;
+    background-color: var(--branco);
+    color: var(--laranja)
 }
 
 #logo{
@@ -126,7 +100,7 @@ h1, h2, h3 {
     justify-content: left;
     align-content: space-around;
     text-align: center;
-    background-color: white;
+    background-color: var(--branco)
 }
 
 #menu{
@@ -148,7 +122,7 @@ h1, h2, h3 {
     justify-content: center;
     align-content: flex-start;
     text-align: center;
-    background-color:white;
+    background-color: var(--branco)
 }
 
 #rodape{
@@ -159,18 +133,18 @@ h1, h2, h3 {
     justify-content: flex-end;
     align-content: center;
     text-align: center;
-    background-color: yellow;
+    background-color: var(--laranja-claro)
 }
 
 .botoes{
-    background-color: orange;
+
+    background-color: var(--laranja)
     height: 37px;
     width: 100px;
-    color: #fff;
-    border: none;
-    font-size: 14px;
+    color: var(--preto);
+    border: 1 ;
+    font-size: 18px;
     align-items: center;
-    
 }
 
 .input-text{

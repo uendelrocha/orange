@@ -4,9 +4,12 @@ var cabecalho =
             <h1>Orange</h1>
         </div>
         <div id="menu">
+            
+            <div><a href="../cadastro/index.html"> Cadastro</a></div>
             <div><a href="../principal/index.html"> Produtos</a></div>
             <div><a href="../carrinho/index.html"> Carrinho</a></div>
             <div><a href="../login/index.html"><button class="botoes">Login</button></a></div>
+
         </div>
     </div>`;
 
