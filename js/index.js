@@ -1,10 +1,11 @@
 var cabecalho =
     `<div class="cabecalho">
-        <div id="logo">
-            <h1>Orange</h1>
+        <div id="logo_top">
+        <img src="../img/logo_top.JPG" alt="logo_top" />
+
         </div>
         <div id="menu">
-            
+        
             <div><a href="../cadastro/index.html"> Cadastro</a></div>
             <div><a href="../principal/index.html"> Produtos</a></div>
             <div><a href="../carrinho/index.html"> Carrinho</a></div>

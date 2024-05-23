@@ -18,10 +18,39 @@
 
 /* Estilos para menus */
 .menu {
-  margin-right: 10px; 
-  background-color: var(--laranja);
+  
+  background-color: transparent;
   color: var(--branco);
+
+  display: flex;
+  width: auto; /* Ajusta automaticamente a largura */
+  margin-right: 15px; /* Espaço horizontal entre itens */
+  padding: 10px 15px; /* Espaço interno ao redor do conteúdo */
+  justify-content: flex-start; /* Alinha à esquerda e cria espaço à direita */
+  align-items: flex-start; /* Alinha verticalmente o conteúdo na parte superior */
+  text-align: center;
+  align-items: center; /* Alinha texto à direita dos itens */
+  font-size: 20px;
+
+
 }
+
+@media (max-width: 768px) {
+  /* Estilos específicos para dispositivos móveis */
+  header {
+    padding: 10px;
+  }
+
+  img {
+    max-width: 80%;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
+
 
 /* Estilos para cards */
 .card {
@@ -81,18 +110,57 @@ h1, h2, h3 {
   color: var(--preto);
 }
 
-.cabecalho{
-    margin-right: 10px; 
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;    
-    height: 10%;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    background-color: var(--branco);
-    color: var(--laranja)
+.cabecalho {
+  display: flex; /* Permite posicionar elementos lado a lado */
+  width: 100%;
+  justify-content: space-between; /* Distribui espaço entre logo e menu */
+  align-content: center; /* Alinha verticalmente ao centro (opcional) */
+  /*text-align: left; /* Texto à esquerda (opcional) */
+  background-color: transparent;
 }
+
+#logo_top {
+  display: flex;
+  width: auto; /* Ajusta automaticamente a largura */
+  justify-content: left;
+  align-content: center; /* Alinha verticalmente ao centro (opcional) */
+  text-align: left;
+}
+
+#menu {
+  display: flex;
+  width: auto; /* Ajusta automaticamente a largura */
+  margin-right: 15px; /* Espaço horizontal entre itens */
+  padding: 10px 15px; /* Espaço interno ao redor do conteúdo */
+  justify-content: flex-start; /* Alinha à esquerda e cria espaço à direita */
+  align-items: flex-start; /* Alinha verticalmente o conteúdo na parte superior */
+  text-align: center;
+  align-items: center; /* Alinha texto à direita dos itens */
+  font-size: 20px;
+}
+
+#menu li {
+  margin-right: 15px; /* Espaço horizontal entre itens */
+  padding: 10px 15px; /* Espaço interno ao redor do conteúdo */
+}
+
+
+/*
+.cabecalho{
+  margin-right: 0;  
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;  
+  right: 0;  
+  width: 100%;  
+  height: 5%;
+  justify-content: right;
+  align-content: right;
+  text-align: right;
+  background-color: transparent;
+  color: var(--laranja);
+}  */
 
 #logo{
     display: flex;
@@ -103,16 +171,29 @@ h1, h2, h3 {
     background-color: var(--branco)
 }
 
+
+
+/*#logo_top{
+  display: flex;
+  width: 100%;    
+  justify-content: left;
+  align-content: space-around;
+  text-align: left;
+  background-color: transparent
+}
+
+
+
 #menu{
     display: flex;
     width: 50%;    
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-content: space-between;
     text-align: right;
-    align-items: center;
+    align-items: right;
     font-size: 20px;
    
-}
+} */
 
 #corpo{
     display: flexbox;
@@ -131,9 +212,20 @@ h1, h2, h3 {
     width: 100%; 
     height: 10%;   
     justify-content: flex-end;
+    position: relative;
     align-content: center;
     text-align: center;
     background-color: var(--laranja-claro)
+}
+
+#divRodape {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .botoes{
