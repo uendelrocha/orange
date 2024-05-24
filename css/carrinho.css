@@ -5,6 +5,11 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+div {
+    margin-top: 0px; /* Top margin only */
+    margin-bottom: 20px; /* Bottom margin only */
+  }
+
 /*#divCabecalho {
     background-color:transparent;
     color: white;
@@ -22,7 +27,7 @@ body, html {
     padding: 10px;
 }
 
-#divRodape {
+/*#divRodape {
     background-color: transparent;
     color: white;
     text-align: center;
@@ -30,7 +35,7 @@ body, html {
     position: fixed;
     bottom: 0;
     width: 100%;
-}
+}*/
 
 #produtos {
     display: flex;
@@ -107,5 +112,6 @@ body, html {
 
 #total {
     font-size: 1.5em;
-    margin-top: 20px;
+    margin-top: 0px;
+    margin-bottom: 80px; 
 }

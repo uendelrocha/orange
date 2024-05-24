@@ -126,6 +126,8 @@ body {
   padding: 10px;
   font-family: var(--fonte-padrao);
   background-color: var(--branco);
+  margin-bottom: 20px; /* Bottom margin only */
+  }
 }
 
 h1, h2, h3 {

@@ -1,7 +1,7 @@
 var cabecalho =
     `<div class="cabecalho">
         <div id="logo_top">
-            <img src="../img/logo_top.JPG" alt="logo_top" />
+            <img src="../img/logo_top.png" alt="logo_top" />
         </div>
         <div id="menu">
             
