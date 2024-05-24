@@ -1,23 +1,39 @@
 let produtos = [];
 let carrinho = [];
 
+function loadProdutosFromStorage() {
+    const storedProdutos = localStorage.getItem('produtos');
+    if (storedProdutos) {
+        produtos = JSON.parse(storedProdutos);
+        renderProdutos();
+    }
+}
+
+
 // Fetch produtos from the server
 function fetchProdutos() {
     console.log('Fetching produtos...');
-    fetch('http://localhost/orange/produtos.json')
-        .then(response => {
-            console.log('Response received:', response);
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Produtos carregados:', data);
-            produtos = data;
-            renderProdutos();
-        })
-        .catch(error => console.error('Erro ao carregar produtos:', error));
+    
+    loadProdutosFromStorage();
+
+    if (produtos.length === 0) {
+        
+    
+        fetch('http://localhost/orange/produtos.json')
+            .then(response => {
+                console.log('Response received:', response);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Produtos carregados:', data);
+                produtos = data;
+                renderProdutos();
+            })
+            .catch(error => console.error('Erro ao carregar produtos:', error));
+        }
 }
 
 // Save carrinho to sessionStorage
@@ -63,17 +79,26 @@ function adicionarAoCarrinho(id) {
             carrinho.push({ ...produto, quantidade: 1 });
         }
     }
+
+    saveProdutosToStorage(); // Save updated products to Web Storage
     renderProdutos();
-    
-    saveCarrinho();
+    saveCarrinho(); // Save updated cart to sessionStorage
+   
+}
+
+
+function saveProdutosToStorage() {
+    localStorage.setItem('produtos', JSON.stringify(produtos));
 }
 
 
 
 // Initialize the application
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Document loaded, initializing application...');
+    loadProdutosFromStorage(); // Load products from Web Storage first
     loadCarrinho();
-    fetchProdutos();
-    
+    fetchProdutos(); // Fetch from JSON if Web Storage is empty
 });
+
