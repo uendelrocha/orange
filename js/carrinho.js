@@ -44,7 +44,7 @@ function renderProdutos() {
             <img src="${produto.imagem}" alt="${produto.produto}">
             <h3>${produto.produto}</h3>
             <p>R$ ${produto.preco.toFixed(2)}</p>
-            <p>Estoque: ${produto.estoque}</p>
+            <p>Estoque:  ${produto.estoque}</p>
             <button onclick="adicionarAoCarrinho(${produto.id})" ${produto.estoque === 0 ? 'disabled' : ''}>Adicionar ao Carrinho</button>
         `;
         produtosContainer.appendChild(produtoElement);
@@ -81,7 +81,7 @@ function renderCarrinho() {
             <img src="${item.imagem}" alt="${item.produto}">
             <h3>${item.produto}</h3>
             <p>R$ ${item.preco.toFixed(2)}</p>
-            <p>Quantidade: ${item.quantidade}</p>
+            <p>Quantidada :  ${item.quantidade}</p>
         `;
         carrinhoContainer.appendChild(itemElement);
         total += item.preco * item.quantidade;
