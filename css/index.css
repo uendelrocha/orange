@@ -17,22 +17,43 @@
 }
 
 /* Estilos para menus */
-.menu {
-  
+
+.cabecalho {
+  display: flex; /* Permite posicionar elementos lado a lado */
+  width: 100%;
+  justify-content: space-between; /* Distribui espaço entre logo e menu */
+  align-content: center; /* Alinha verticalmente ao centro (opcional) */
   background-color: transparent;
-  color: var(--branco);
+}
 
+#logo_top {
   display: flex;
-  width: auto; /* Ajusta automaticamente a largura */
-  margin-right: 15px; /* Espaço horizontal entre itens */
-  padding: 10px 15px; /* Espaço interno ao redor do conteúdo */
-  justify-content: flex-start; /* Alinha à esquerda e cria espaço à direita */
-  align-items: flex-start; /* Alinha verticalmente o conteúdo na parte superior */
-  text-align: center;
-  align-items: center; /* Alinha texto à direita dos itens */
-  font-size: 20px;
+  align-items: center;
+}
 
+#logo_top img {
+  max-width: 100px; /* Defina o tamanho máximo da imagem conforme necessário */
+}
 
+#menu {
+  display: flex;
+  align-items: center;
+}
+
+#menu ul {
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0;
+  margin: 0;
+}
+
+#menu li {
+  margin-right: 15px; /* Espaço horizontal entre os itens do menu */
+  list-style-type: none;
+}
+
+#menu li:last-child {
+  margin-right: 0; /* Remove a margem à direita do último item do menu */
+  list-style-type: none;
 }
 
 @media (max-width: 768px) {
@@ -101,6 +122,8 @@ a:hover {
 
 /* Outros estilos globais */
 body {
+  margin-top: 0px; /* Ajuste para compensar a altura do cabeçalho */
+  padding: 10px;
   font-family: var(--fonte-padrao);
   background-color: var(--branco);
 }
@@ -110,39 +133,6 @@ h1, h2, h3 {
   color: var(--preto);
 }
 
-.cabecalho {
-  display: flex; /* Permite posicionar elementos lado a lado */
-  width: 100%;
-  justify-content: space-between; /* Distribui espaço entre logo e menu */
-  align-content: center; /* Alinha verticalmente ao centro (opcional) */
-  /*text-align: left; /* Texto à esquerda (opcional) */
-  background-color: transparent;
-}
-
-#logo_top {
-  display: flex;
-  width: auto; /* Ajusta automaticamente a largura */
-  justify-content: left;
-  align-content: center; /* Alinha verticalmente ao centro (opcional) */
-  text-align: left;
-}
-
-#menu {
-  display: flex;
-  width: auto; /* Ajusta automaticamente a largura */
-  margin-right: 15px; /* Espaço horizontal entre itens */
-  padding: 10px 15px; /* Espaço interno ao redor do conteúdo */
-  justify-content: flex-start; /* Alinha à esquerda e cria espaço à direita */
-  align-items: flex-start; /* Alinha verticalmente o conteúdo na parte superior */
-  text-align: center;
-  align-items: center; /* Alinha texto à direita dos itens */
-  font-size: 20px;
-}
-
-#menu li {
-  margin-right: 15px; /* Espaço horizontal entre itens */
-  padding: 10px 15px; /* Espaço interno ao redor do conteúdo */
-}
 
 
 /*
@@ -196,6 +186,8 @@ h1, h2, h3 {
 } */
 
 #corpo{
+    margin-top: 40px; /* Ajuste para compensar a altura do cabeçalho */
+    padding: 10px;
     display: flexbox;
     flex-wrap: wrap;
     width: 100%;
@@ -204,7 +196,10 @@ h1, h2, h3 {
     align-content: flex-start;
     text-align: center;
     background-color: var(--branco)
+    
 }
+
+
 
 #rodape{
     display: flexbox;
