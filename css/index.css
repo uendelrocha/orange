@@ -1,69 +1,249 @@
-body{
-    display: flex;
-    flex-wrap: wrap;
+
+
+:root {
+  /* Cores */
+  --laranja: #FFA500;
+  --laranja-claro: #FFD700;
+  --vermelho: #FF0000;
+  --branco: #FAFAFA;
+  --preto: #404040;
+  --cinza: #CCCCCC;
+
+  /* Fonte */
+  --fonte-padrao: Arial, sans-serif;
+
+  /* Tamanhos */
+  --tamanho-titulo: 24px;
 }
 
-#divConteudo{
+/* Estilos para menus */
+.menu {
+  
+  background-color: transparent;
+  color: var(--branco);
+
+  display: flex;
+  width: auto; /* Ajusta automaticamente a largura */
+  margin-right: 15px; /* Espaço horizontal entre itens */
+  padding: 10px 15px; /* Espaço interno ao redor do conteúdo */
+  justify-content: flex-start; /* Alinha à esquerda e cria espaço à direita */
+  align-items: flex-start; /* Alinha verticalmente o conteúdo na parte superior */
+  text-align: center;
+  align-items: center; /* Alinha texto à direita dos itens */
+  font-size: 20px;
+
+
+}
+
+@media (max-width: 768px) {
+  /* Estilos específicos para dispositivos móveis */
+  header {
+    padding: 10px;
+  }
+
+  img {
+    max-width: 80%;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
+
+
+/* Estilos para cards */
+.card {
+  background-color: var(--laranja-claro);
+  border: 1px solid var(--laranja);
+  box-shadow: 10px 2px 0px rgb(47, 46, 46);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Estilos para links */
+a {
+  color: var(--laranja);
+  text-decoration: none;
+}
+
+/* Estilos para botões */
+.botao {
+  background-color: var(--laranja);
+  color: var(--cinza);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Estilos para botões de compra */
+.botao-compra {
+  background-color: var(--laranja);
+  color: var(--branco);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Estilos para botões de compra de produtos esgotados */
+.botao-compra.esgotado {
+  background-color: var(--vermelho);
+  color: var(--branco);
+  border: none;
+  padding: 10px 20px;
+  cursor: not-allowed;
+  /* Outros estilos desejados para botões de produtos esgotados */
+}
+
+a:hover {
+  color: var(--laranja-claro);
+}
+
+/* Outros estilos globais */
+body {
+  font-family: var(--fonte-padrao);
+  background-color: var(--branco);
+}
+
+h1, h2, h3 {
+  font-size: var(--tamanho-titulo);
+  color: var(--preto);
+}
+
+.cabecalho {
+  display: flex; /* Permite posicionar elementos lado a lado */
+  width: 100%;
+  justify-content: space-between; /* Distribui espaço entre logo e menu */
+  align-content: center; /* Alinha verticalmente ao centro (opcional) */
+  /*text-align: left; /* Texto à esquerda (opcional) */
+  background-color: transparent;
+}
+
+#logo_top {
+  display: flex;
+  width: auto; /* Ajusta automaticamente a largura */
+  justify-content: left;
+  align-content: center; /* Alinha verticalmente ao centro (opcional) */
+  text-align: left;
+}
+
+#menu {
+  display: flex;
+  width: auto; /* Ajusta automaticamente a largura */
+  margin-right: 15px; /* Espaço horizontal entre itens */
+  padding: 10px 15px; /* Espaço interno ao redor do conteúdo */
+  justify-content: flex-start; /* Alinha à esquerda e cria espaço à direita */
+  align-items: flex-start; /* Alinha verticalmente o conteúdo na parte superior */
+  text-align: center;
+  align-items: center; /* Alinha texto à direita dos itens */
+  font-size: 20px;
+}
+
+#menu li {
+  margin-right: 15px; /* Espaço horizontal entre itens */
+  padding: 10px 15px; /* Espaço interno ao redor do conteúdo */
+}
+
+
+/*
+.cabecalho{
+  margin-right: 0;  
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;  
+  right: 0;  
+  width: 100%;  
+  height: 5%;
+  justify-content: right;
+  align-content: right;
+  text-align: right;
+  background-color: transparent;
+  color: var(--laranja);
+}  */
+
+#logo{
     display: flex;
+    width: 50%;    
+    justify-content: left;
+    align-content: space-around;
+    text-align: center;
+    background-color: var(--branco)
+}
+
+
+
+/*#logo_top{
+  display: flex;
+  width: 100%;    
+  justify-content: left;
+  align-content: space-around;
+  text-align: left;
+  background-color: transparent
+}
+
+
+
+#menu{
+    display: flex;
+    width: 50%;    
+    justify-content: flex-end;
+    align-content: space-between;
+    text-align: right;
+    align-items: right;
+    font-size: 20px;
+   
+} */
+
+#corpo{
+    display: flexbox;
     flex-wrap: wrap;
     width: 100%;
+    height: 80%;
     justify-content: center;
     align-content: flex-start;
+    text-align: center;
+    background-color: var(--branco)
 }
 
-.card{
-    width: 100%;
-    min-width: 250px;
-    max-width: 250px;
-    height: 350px;
-    border-radius: 3px;
-    margin: 10px;
-    border: solid 1px #EEE;
+#rodape{
+    display: flexbox;
+    flex-wrap: wrap;
+    width: 100%; 
+    height: 10%;   
+    justify-content: flex-end;
+    position: relative;
+    align-content: center;
+    text-align: center;
+    background-color: var(--laranja-claro)
 }
 
-.card-capa{
-    width: 100%;
-    height: 60%;
+#divRodape {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-.card-capa img{
-    width: 100%;
-    height: 100%;
-    border-radius: 3px 3px 0px 0px;
-}
+.botoes{
 
-.card-corpo{
-    width: 100%;
-    height: 25%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.card-corpo-produto{
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.card-add-carrinho{
-    width: 100%;
-    height: 15%;
-    border-radius: 0px 0px 3px 3px;
-    background-color: #35a45c;
-    cursor: pointer;
-    color: white;
-
-    display: flex;
+    background-color: var(--laranja)
+    height: 37px;
+    width: 100px;
+    color: var(--preto);
+    border: 1 ;
+    font-size: 18px;
     align-items: center;
-    justify-content: center;
 }
 
-.card-add-carrinho i{
-    margin-right: 10px;
-}
+.input-text{
+    background-color: #EEE;
+    border: solid 1px #ccc;
+    padding: 10px;  
+    size: 10;
 
-.card-add-carrinho:hover {
-    background-color: #28c05d;
 }
-
 
