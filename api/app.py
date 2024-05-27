@@ -8,7 +8,7 @@ app = Flask(__name__)
 with open("produtos.json", 'r') as arquivo:
     produtos = json.load(arquivo)
 		
-		
+
 # Rota para obter todos os produtos
 @app.route('/api/produtos', methods=['GET'])
 def get_produtos():
