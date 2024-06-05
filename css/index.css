@@ -213,11 +213,11 @@ h1, h2, h3 {
 }
 
 #divRodape {
-  background-color: #333;
-  color: white;
+  background-color: transparent;
+  color: var(--preto);
   text-align: center;
   padding: 10px 0;
-  position: fixed;
+ 
   bottom: 0;
   width: 100%;
 }
