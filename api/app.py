@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 import json
 
 app = Flask(__name__)
+CORS(app) # Permite solicitações de qualquer origem
 
 # Dados de estoque
 # Lê o arquivo JSON de produtos
