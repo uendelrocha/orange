@@ -1,6 +1,7 @@
 body {
+    margin-top: 0px; /* Ajuste para compensar a altura do cabeçalho */
     margin: 1;
-    padding: 20px;
+    padding: 10px;
     background-color: Var(--branco);
   }
   
@@ -87,6 +88,8 @@ body {
   }
 
   .corpo{
+    margin-top: 40px; /* Ajuste para compensar a altura do cabeçalho */
+    padding: 10px;
     display: flexbox;
     flex-wrap: wrap;
     width: 60%;

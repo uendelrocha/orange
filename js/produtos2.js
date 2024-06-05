@@ -1,23 +1,37 @@
 let produtos = [];
 let carrinho = [];
 
+function loadProdutosFromStorage() {
+    const storedProdutos = localStorage.getItem('produtos');
+    if (storedProdutos) {
+        produtos = JSON.parse(storedProdutos);
+        renderProdutos();
+    }
+}
+
 // Fetch produtos from the server
 function fetchProdutos() {
     console.log('Fetching produtos...');
-    fetch('http://localhost/orange/produtos.json')
-        .then(response => {
-            console.log('Response received:', response);
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Produtos carregados:', data);
-            produtos = data;
-            renderProdutos();
-        })
-        .catch(error => console.error('Erro ao carregar produtos:', error));
+
+    loadProdutosFromStorage();
+
+    if (produtos.length === 0) {
+        fetch('http://localhost/api/produtos.php')
+            .then(response => {
+                console.log('Response received:', response);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Produtos carregados:', data);
+                produtos = data;
+                saveProdutosToStorage(); // Save fetched products to localStorage
+                renderProdutos();
+            })
+            .catch(error => console.error('Erro ao carregar produtos:', error));
+    }
 }
 
 // Save carrinho to sessionStorage
@@ -44,7 +58,7 @@ function renderProdutos() {
             <img src="${produto.imagem}" alt="${produto.produto}">
             <h3>${produto.produto}</h3>
             <p>R$ ${produto.preco.toFixed(2)}</p>
-            <p>Estoque:  ${produto.estoque}</p>
+            <p>Estoque: ${produto.estoque}</p>
             <button onclick="adicionarAoCarrinho(${produto.id})" ${produto.estoque === 0 ? 'disabled' : ''}>Adicionar ao Carrinho</button>
         `;
         produtosContainer.appendChild(produtoElement);
@@ -63,36 +77,20 @@ function adicionarAoCarrinho(id) {
             carrinho.push({ ...produto, quantidade: 1 });
         }
     }
+
+    saveProdutosToStorage(); // Save updated products to localStorage
     renderProdutos();
-    renderCarrinho();
-    saveCarrinho();
+    saveCarrinho(); // Save updated cart to sessionStorage
 }
 
-// Render carrinho to the DOM
-function renderCarrinho() {
-    const carrinhoContainer = document.getElementById('carrinho');
-    const totalContainer = document.getElementById('total');
-    carrinhoContainer.innerHTML = '';
-    let total = 0;
-    carrinho.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.className = 'item-carrinho';
-        itemElement.innerHTML = `
-            <img src="${item.imagem}" alt="${item.produto}">
-            <h3>${item.produto}</h3>
-            <p>R$ ${item.preco.toFixed(2)}</p>
-            <p>Quantidada :  ${item.quantidade}</p>
-        `;
-        carrinhoContainer.appendChild(itemElement);
-        total += item.preco * item.quantidade;
-    });
-    totalContainer.innerHTML = `Total: R$ ${total.toFixed(2)}`;
+function saveProdutosToStorage() {
+    localStorage.setItem('produtos', JSON.stringify(produtos));
 }
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Document loaded, initializing application...');
+    loadProdutosFromStorage(); // Load products from localStorage first
     loadCarrinho();
-    fetchProdutos();
-    renderCarrinho();
+    fetchProdutos(); // Fetch from API if localStorage is empty
 });
