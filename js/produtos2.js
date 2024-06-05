@@ -9,17 +9,14 @@ function loadProdutosFromStorage() {
     }
 }
 
-
 // Fetch produtos from the server
 function fetchProdutos() {
     console.log('Fetching produtos...');
-    
+
     loadProdutosFromStorage();
 
     if (produtos.length === 0) {
-        
-    
-        fetch('http://localhost/orange/produtos.json')
+        fetch('http://localhost/api/produtos.php')
             .then(response => {
                 console.log('Response received:', response);
                 if (!response.ok) {
@@ -30,10 +27,11 @@ function fetchProdutos() {
             .then(data => {
                 console.log('Produtos carregados:', data);
                 produtos = data;
+                saveProdutosToStorage(); // Save fetched products to localStorage
                 renderProdutos();
             })
             .catch(error => console.error('Erro ao carregar produtos:', error));
-        }
+    }
 }
 
 // Save carrinho to sessionStorage
@@ -80,25 +78,19 @@ function adicionarAoCarrinho(id) {
         }
     }
 
-    saveProdutosToStorage(); // Save updated products to Web Storage
+    saveProdutosToStorage(); // Save updated products to localStorage
     renderProdutos();
     saveCarrinho(); // Save updated cart to sessionStorage
-   
 }
-
 
 function saveProdutosToStorage() {
     localStorage.setItem('produtos', JSON.stringify(produtos));
 }
 
-
-
 // Initialize the application
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Document loaded, initializing application...');
-    loadProdutosFromStorage(); // Load products from Web Storage first
+    loadProdutosFromStorage(); // Load products from localStorage first
     loadCarrinho();
-    fetchProdutos(); // Fetch from JSON if Web Storage is empty
+    fetchProdutos(); // Fetch from API if localStorage is empty
 });
-

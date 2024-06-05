@@ -4,9 +4,9 @@ let carrinho = [];
 
 
 // Save carrinho to sessionStorage
-function saveCarrinho() {
-    sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
-}
+//function saveCarrinho() {
+  //  sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
+//}
 
 // Load carrinho from sessionStorage
 function loadCarrinho() {
@@ -15,8 +15,6 @@ function loadCarrinho() {
         carrinho = JSON.parse(storedCarrinho);
     }
 }
-
-
 
 
 // Render carrinho to the DOM
