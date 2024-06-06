@@ -61,14 +61,15 @@ function renderProdutos() {
                 <p>R$ ${produto.preco.toFixed(2)}</p>
                 <p>Estoque: ${produto.estoque}</p>
                 <button onclick="adicionarAoCarrinho(${produto.id})" ${produto.estoque === 0 ? 'disabled' : ''}>Adicionar ao Carrinho</button>
-                <button onclick="removerDoCarrinho(${produto.id})">Remover do Carrinho</button>
+                
             `;
             produtosContainer.appendChild(produtoElement);
         });
     }
 }
 
-// Add produto to carrinho
+
+// Add product to cart
 function adicionarAoCarrinho(id) {
     const produto = produtos.find(p => p.id === id);
     if (produto && produto.estoque > 0) {
@@ -79,12 +80,35 @@ function adicionarAoCarrinho(id) {
         } else {
             carrinho.push({ ...produto, quantidade: 1 });
         }
+        // Save updated products to localStorage
+        saveProdutosToStorage();
+        // Save updated cart to sessionStorage
+        saveCarrinho();
+        // Redirect to the cart page
+        window.location.href = '../carrinho/index.html';
     }
-
-    saveProdutosToStorage(); // Save updated products to localStorage
-    renderProdutos();
-    saveCarrinho(); // Save updated cart to sessionStorage
 }
+
+
+
+
+// // Add produto to carrinho
+// function adicionarAoCarrinho(id) {
+//     const produto = produtos.find(p => p.id === id);
+//     if (produto && produto.estoque > 0) {
+//         produto.estoque--;
+//         const itemCarrinho = carrinho.find(item => item.id === id);
+//         if (itemCarrinho) {
+//             itemCarrinho.quantidade++;
+//         } else {
+//             carrinho.push({ ...produto, quantidade: 1 });
+//         }
+//     }
+
+//     saveProdutosToStorage(); // Save updated products to localStorage
+//     renderProdutos();
+//     saveCarrinho(); // Save updated cart to sessionStorage
+// }
 
 // Remove produto from carrinho
 function removerDoCarrinho(id) {
