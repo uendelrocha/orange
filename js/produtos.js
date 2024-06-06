@@ -89,27 +89,6 @@ function adicionarAoCarrinho(id) {
     }
 }
 
-
-
-
-// // Add produto to carrinho
-// function adicionarAoCarrinho(id) {
-//     const produto = produtos.find(p => p.id === id);
-//     if (produto && produto.estoque > 0) {
-//         produto.estoque--;
-//         const itemCarrinho = carrinho.find(item => item.id === id);
-//         if (itemCarrinho) {
-//             itemCarrinho.quantidade++;
-//         } else {
-//             carrinho.push({ ...produto, quantidade: 1 });
-//         }
-//     }
-
-//     saveProdutosToStorage(); // Save updated products to localStorage
-//     renderProdutos();
-//     saveCarrinho(); // Save updated cart to sessionStorage
-// }
-
 // Remove produto from carrinho
 function removerDoCarrinho(id) {
     const produtoIndex = carrinho.findIndex(item => item.id === id);
