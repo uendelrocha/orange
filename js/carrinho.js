@@ -21,6 +21,7 @@ function renderCarrinho() {
     carrinhoContainer.innerHTML = '';
     let total = 0;
     carrinho.forEach(item => {
+        const produtoOriginal = produtos.find(p => p.id === item.id);
         const itemElement = document.createElement('div');
         itemElement.className = 'item-carrinho';
         itemElement.innerHTML = `
@@ -28,6 +29,7 @@ function renderCarrinho() {
             <h3>${item.produto}</h3>
             <p>R$: ${item.preco.toFixed(2)}</p>
             <p>Quantidade: ${item.quantidade}</p>
+            <p>Estoque: ${produtoOriginal ? produtoOriginal.estoque : 'N/A'} / ${produtoOriginal ? produtoOriginal.estoqueTotal : 'N/A'}</p>
             <button onclick="diminuirQuantidade(${item.id})">-</button>
             <span>${item.quantidade}</span>
             <button onclick="aumentarQuantidade(${item.id})">+</button>
@@ -73,7 +75,7 @@ function renderProdutos() {
                 <img src="${produto.imagem}" alt="${produto.produto}">
                 <h3>${produto.produto}</h3>
                 <p>R$ ${produto.preco.toFixed(2)}</p>
-                <p>Estoque: ${produto.estoque}</p>
+                <p>Estoque: ${produto.estoque} / ${produto.estoqueTotal}</p>
                 <button onclick="adicionarAoCarrinho(${produto.id})" ${produto.estoque === 0 ? 'disabled' : ''}>Adicionar ao Carrinho</button>
                 <button onclick="removerDoCarrinho(${produto.id})" ${produto.estoque === 0 ? 'disabled' : ''}>Remover do Carrinho</button>
             `;
@@ -174,7 +176,10 @@ function fetchProdutos() {
 function loadProdutosFromStorage() {
     const storedProdutos = localStorage.getItem('produtos');
     if (storedProdutos) {
-        produtos = JSON.parse(storedProdutos);
+        produtos = JSON.parse(storedProdutos).map(produto => ({
+            ...produto,
+            estoqueTotal: produto.estoqueTotal || produto.estoque // Clonar estoque original para uma propriedade separada
+        }));
         renderProdutos();
     }
 }
