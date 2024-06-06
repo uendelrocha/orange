@@ -1,3 +1,4 @@
+let produtos = [];
 let carrinho = [];
 
 // Save carrinho to sessionStorage
@@ -36,9 +37,46 @@ function renderCarrinho() {
 
 // Clear the cart and update UI
 function esvaziarCarrinho() {
+    // Atualizar o estoque dos produtos no carrinho
+    carrinho.forEach(item => {
+        const produtoOriginal = produtos.find(p => p.id === item.id);
+        if (produtoOriginal) {
+            produtoOriginal.estoque += item.quantidade;
+        }
+    });
+
+    // Esvaziar o carrinho
     carrinho = [];
     sessionStorage.removeItem('carrinho');
     renderCarrinho();
+    saveProdutosToStorage(); // Salvar os produtos atualizados no localStorage
+    renderProdutos(); // Atualizar a renderização dos produtos
+}
+
+// Save produtos to localStorage
+function saveProdutosToStorage() {
+    localStorage.setItem('produtos', JSON.stringify(produtos));
+}
+
+// Render produtos to the DOM
+function renderProdutos() {
+    const produtosContainer = document.getElementById('produtos');
+    if (produtosContainer) {
+        produtosContainer.innerHTML = '';
+        produtos.forEach(produto => {
+            const produtoElement = document.createElement('div');
+            produtoElement.className = 'produto';
+            produtoElement.innerHTML = `
+                <img src="${produto.imagem}" alt="${produto.produto}">
+                <h3>${produto.produto}</h3>
+                <p>R$ ${produto.preco.toFixed(2)}</p>
+                <p>Estoque: ${produto.estoque}</p>
+                <button onclick="adicionarAoCarrinho(${produto.id})" ${produto.estoque === 0 ? 'disabled' : ''}>Adicionar ao Carrinho</button>
+                <button onclick="removerDoCarrinho(${produto.id})">Remover do Carrinho</button>
+            `;
+            produtosContainer.appendChild(produtoElement);
+        });
+    }
 }
 
 // Initialize the application
@@ -52,4 +90,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (clearCartButton) {
         clearCartButton.addEventListener('click', esvaziarCarrinho);
     }
+
+    loadProdutosFromStorage(); // Load products from localStorage first
+    fetchProdutos(); // Fetch from API if localStorage is empty
 });
+
+// Placeholder functions for adicionarAoCarrinho and removerDoCarrinho
+function adicionarAoCarrinho(id) {
+    // Implementar lógica para adicionar produto ao carrinho e atualizar estoque
+}
+
+function removerDoCarrinho(id) {
+    // Implementar lógica para remover produto do carrinho e atualizar estoque
+}
+
+// Placeholder function for fetchProdutos and loadProdutosFromStorage
+function fetchProdutos() {
+    // Implementar lógica para buscar produtos da API
+}
+
+function loadProdutosFromStorage() {
+    // Implementar lógica para carregar produtos do localStorage
+}
