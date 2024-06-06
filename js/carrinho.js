@@ -26,13 +26,14 @@ function renderCarrinho() {
         itemElement.className = 'item-carrinho';
         itemElement.innerHTML = `
             <img src="${item.imagem}" alt="${item.produto}">
-            <h3>${item.produto}</h3>
-            <p>R$: ${item.preco.toFixed(2)}</p>
-            <p>Quantidade: ${item.quantidade}</p>
-            <p>Estoque: ${produtoOriginal ? produtoOriginal.estoque : 'N/A'} / ${produtoOriginal ? produtoOriginal.estoqueTotal : 'N/A'}</p>
-            <button onclick="diminuirQuantidade(${item.id})">-</button>
-            <span>${item.quantidade}</span>
-            <button onclick="aumentarQuantidade(${item.id})">+</button>
+            <h3>&nbsp ${item.produto}&nbsp </h3>
+            <p>&nbsp R$: ${item.preco.toFixed(2)} &nbsp</p>
+            <p>&nbsp Quantidade: &nbsp </p>
+            <span>  ${item.quantidade} &nbsp</span>
+            <button onclick="diminuirQuantidade(${item.id} &nbsp )">-</button>
+            <button onclick="aumentarQuantidade(${item.id} &nbsp )">+</button>
+            <p>&nbsp Estoque: &nbsp ${produtoOriginal ? produtoOriginal.estoque : '  '} &nbsp </p>
+            <p>&nbsp Sub-Total R$: ${(item.preco * item.quantidade).toFixed(2)} &nbsp</p>
         `;
         carrinhoContainer.appendChild(itemElement);
         total += item.preco * item.quantidade;
