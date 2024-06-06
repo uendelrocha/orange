@@ -10,32 +10,10 @@ div {
     margin-bottom: 20px; /* Bottom margin only */
   }
 
-/*#divCabecalho {
-    background-color:transparent;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    /* position: fixed; */
-   /* top: 0;
-    left: 0;
-    z-index: 1000;*/
-/*}*/
-
 #corpo {
     margin-top: 40px; /* Ajuste para compensar a altura do cabeçalho */
     padding: 10px;
 }
-
-/*#divRodape {
-    background-color: transparent;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}*/
 
 #produtos {
     display: flex;
@@ -59,8 +37,6 @@ div {
 .produto img {
     width: 100%;
     height: auto;
-    /* border-radius: 10px;
-    margin-bottom: 10px; */
 }
 
 .produto h3 {
@@ -72,13 +48,10 @@ div {
     margin: 5px 0;
 }
 
-
 .produto button:hover {
     background-color: hsl(34, 88%, 60%); /* Nova cor ao passar o mouse */
     color: white; /* Muda a cor do texto para branco */
 }
-}
-
 
 .produto button {
     background-color: var(--preto);
