@@ -1,25 +1,6 @@
 let produtos = [];
 let carrinho = [];
 
-// Fetch produtos from the server
-function fetchProdutos() {
-    console.log('Fetching produtos...');
-    fetch('http://localhost/orange/produtos.json')
-        .then(response => {
-            console.log('Response received:', response);
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Produtos carregados:', data);
-            produtos = data;
-            renderProdutos();
-        })
-        .catch(error => console.error('Erro ao carregar produtos:', error));
-}
-
 // Save carrinho to sessionStorage
 function saveCarrinho() {
     sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
@@ -31,41 +12,6 @@ function loadCarrinho() {
     if (storedCarrinho) {
         carrinho = JSON.parse(storedCarrinho);
     }
-}
-
-// Render produtos to the DOM
-function renderProdutos() {
-    const produtosContainer = document.getElementById('produtos');
-    produtosContainer.innerHTML = '';
-    produtos.forEach(produto => {
-        const produtoElement = document.createElement('div');
-        produtoElement.className = 'produto';
-        produtoElement.innerHTML = `
-            <img src="${produto.imagem}" alt="${produto.produto}">
-            <h3>${produto.produto}</h3>
-            <p>R$ ${produto.preco.toFixed(2)}</p>
-            <p>Estoque:  ${produto.estoque}</p>
-            <button onclick="adicionarAoCarrinho(${produto.id})" ${produto.estoque === 0 ? 'disabled' : ''}>Adicionar ao Carrinho</button>
-        `;
-        produtosContainer.appendChild(produtoElement);
-    });
-}
-
-// Add produto to carrinho
-function adicionarAoCarrinho(id) {
-    const produto = produtos.find(p => p.id === id);
-    if (produto && produto.estoque > 0) {
-        produto.estoque--;
-        const itemCarrinho = carrinho.find(item => item.id === id);
-        if (itemCarrinho) {
-            itemCarrinho.quantidade++;
-        } else {
-            carrinho.push({ ...produto, quantidade: 1 });
-        }
-    }
-    renderProdutos();
-    renderCarrinho();
-    saveCarrinho();
 }
 
 // Render carrinho to the DOM
@@ -80,8 +26,11 @@ function renderCarrinho() {
         itemElement.innerHTML = `
             <img src="${item.imagem}" alt="${item.produto}">
             <h3>${item.produto}</h3>
-            <p>R$ ${item.preco.toFixed(2)}</p>
-            <p>Quantidada :  ${item.quantidade}</p>
+            <p>R$: ${item.preco.toFixed(2)}</p>
+            <p>Quantidade: ${item.quantidade}</p>
+            <button onclick="diminuirQuantidade(${item.id})">-</button>
+            <span>${item.quantidade}</span>
+            <button onclick="aumentarQuantidade(${item.id})">+</button>
         `;
         carrinhoContainer.appendChild(itemElement);
         total += item.preco * item.quantidade;
@@ -89,10 +38,143 @@ function renderCarrinho() {
     totalContainer.innerHTML = `Total: R$ ${total.toFixed(2)}`;
 }
 
+// Clear the cart and update UI
+function esvaziarCarrinho() {
+    // Atualizar o estoque dos produtos no carrinho
+    carrinho.forEach(item => {
+        const produtoOriginal = produtos.find(p => p.id === item.id);
+        if (produtoOriginal) {
+            produtoOriginal.estoque += item.quantidade;
+        }
+    });
+
+    // Esvaziar o carrinho
+    carrinho = [];
+    sessionStorage.removeItem('carrinho');
+    renderCarrinho();
+    saveProdutosToStorage(); // Salvar os produtos atualizados no localStorage
+    renderProdutos(); // Atualizar a renderização dos produtos
+}
+
+// Save produtos to localStorage
+function saveProdutosToStorage() {
+    localStorage.setItem('produtos', JSON.stringify(produtos));
+}
+
+// Render produtos to the DOM
+function renderProdutos() {
+    const produtosContainer = document.getElementById('produtos');
+    if (produtosContainer) {
+        produtosContainer.innerHTML = '';
+        produtos.forEach(produto => {
+            const produtoElement = document.createElement('div');
+            produtoElement.className = 'produto';
+            produtoElement.innerHTML = `
+                <img src="${produto.imagem}" alt="${produto.produto}">
+                <h3>${produto.produto}</h3>
+                <p>R$ ${produto.preco.toFixed(2)}</p>
+                <p>Estoque: ${produto.estoque}</p>
+                <button onclick="adicionarAoCarrinho(${produto.id})" ${produto.estoque === 0 ? 'disabled' : ''}>Adicionar ao Carrinho</button>
+                <button onclick="removerDoCarrinho(${produto.id})" ${produto.estoque === 0 ? 'disabled' : ''}>Remover do Carrinho</button>
+            `;
+            produtosContainer.appendChild(produtoElement);
+        });
+    }
+}
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Document loaded, initializing application...');
     loadCarrinho();
-    fetchProdutos();
     renderCarrinho();
+
+    // Set up the clear cart button
+    const clearCartButton = document.getElementById('esvaziarCarrinhoButton');
+    if (clearCartButton) {
+        clearCartButton.addEventListener('click', esvaziarCarrinho);
+    }
+
+    loadProdutosFromStorage(); // Load products from localStorage first
+    fetchProdutos(); // Fetch from API if localStorage is empty
 });
+
+// Função para aumentar a quantidade do produto no carrinho
+function aumentarQuantidade(id) {
+    const itemIndex = carrinho.findIndex(item => item.id === id);
+    if (itemIndex !== -1) {
+        const produto = produtos.find(p => p.id === id);
+        if (produto && produto.estoque > 0) {
+            carrinho[itemIndex].quantidade++;
+            produto.estoque--;
+            saveCarrinho();
+            saveProdutosToStorage(); // Salvar produtos atualizados no localStorage
+            renderCarrinho();
+            renderProdutos();
+        }
+    }
+}
+
+// Função para diminuir a quantidade do produto no carrinho
+function diminuirQuantidade(id) {
+    const itemIndex = carrinho.findIndex(item => item.id === id);
+    if (itemIndex !== -1) {
+        const produto = produtos.find(p => p.id === id);
+        if (carrinho[itemIndex].quantidade > 1) {
+            carrinho[itemIndex].quantidade--;
+            produto.estoque++;
+        } else {
+            produto.estoque += carrinho[itemIndex].quantidade;
+            carrinho.splice(itemIndex, 1); // Remover item se a quantidade se tornar zero
+        }
+        saveCarrinho();
+        saveProdutosToStorage(); // Salvar produtos atualizados no localStorage
+        renderCarrinho();
+        renderProdutos();
+    }
+}
+
+// Função para adicionar produto ao carrinho
+function adicionarAoCarrinho(id) {
+    const produto = produtos.find(p => p.id === id);
+    if (produto && produto.estoque > 0) {
+        const itemIndex = carrinho.findIndex(item => item.id === id);
+        if (itemIndex !== -1) {
+            carrinho[itemIndex].quantidade++;
+        } else {
+            carrinho.push({ ...produto, quantidade: 1 });
+        }
+        produto.estoque--;
+        saveCarrinho();
+        saveProdutosToStorage();
+        renderCarrinho();
+        renderProdutos();
+    }
+}
+
+// Função para remover produto do carrinho
+function removerDoCarrinho(id) {
+    const itemIndex = carrinho.findIndex(item => item.id === id);
+    if (itemIndex !== -1) {
+        const produto = produtos.find(p => p.id === id);
+        produto.estoque += carrinho[itemIndex].quantidade;
+        carrinho.splice(itemIndex, 1);
+        saveCarrinho();
+        saveProdutosToStorage();
+        renderCarrinho();
+        renderProdutos();
+    }
+}
+
+// Função para buscar produtos da API
+function fetchProdutos() {
+    // Implementar lógica para buscar produtos da API
+}
+
+// Função para carregar produtos do localStorage
+function loadProdutosFromStorage() {
+    const storedProdutos = localStorage.getItem('produtos');
+    if (storedProdutos) {
+        produtos = JSON.parse(storedProdutos);
+        renderProdutos();
+    }
+}
