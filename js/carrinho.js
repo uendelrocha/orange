@@ -1,12 +1,12 @@
 let produtos = [];
 let carrinho = [];
 
-// Save carrinho to sessionStorage
+// Salvar Carrinho para a sessionStorage
 function saveCarrinho() {
     sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
 }
 
-// Load carrinho from sessionStorage
+// Carregar Carrinho sessionStorage
 function loadCarrinho() {
     const storedCarrinho = sessionStorage.getItem('carrinho');
     if (storedCarrinho) {
@@ -14,7 +14,7 @@ function loadCarrinho() {
     }
 }
 
-// Render carrinho to the DOM
+// Render carrinho da DOM
 function renderCarrinho() {
     const carrinhoContainer = document.getElementById('carrinho');
     const totalContainer = document.getElementById('total');
@@ -41,7 +41,7 @@ function renderCarrinho() {
     totalContainer.innerHTML = `Total: R$ ${total.toFixed(2)}`;
 }
 
-// Clear the cart and update UI
+
 function esvaziarCarrinho() {
     // Atualizar o estoque dos produtos no carrinho
     carrinho.forEach(item => {
@@ -59,12 +59,12 @@ function esvaziarCarrinho() {
     renderProdutos(); // Atualizar a renderização dos produtos
 }
 
-// Save produtos to localStorage
+// Salvar produtos na localStorage
 function saveProdutosToStorage() {
     localStorage.setItem('produtos', JSON.stringify(produtos));
 }
 
-// Render produtos to the DOM
+// Renderizar produtos na DOM
 function renderProdutos() {
     const produtosContainer = document.getElementById('produtos');
     if (produtosContainer) {
@@ -85,20 +85,20 @@ function renderProdutos() {
     }
 }
 
-// Initialize the application
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Document loaded, initializing application...');
     loadCarrinho();
     renderCarrinho();
 
-    // Set up the clear cart button
+    // Botal de limpeza
     const clearCartButton = document.getElementById('esvaziarCarrinhoButton');
     if (clearCartButton) {
         clearCartButton.addEventListener('click', esvaziarCarrinho);
     }
 
-    loadProdutosFromStorage(); // Load products from localStorage first
-    fetchProdutos(); // Fetch from API if localStorage is empty
+    loadProdutosFromStorage(); 
+    fetchProdutos(); 
 });
 
 // Função para aumentar a quantidade do produto no carrinho
@@ -130,7 +130,7 @@ function diminuirQuantidade(id) {
             carrinho.splice(itemIndex, 1); // Remover item se a quantidade se tornar zero
         }
         saveCarrinho();
-        saveProdutosToStorage(); // Salvar produtos atualizados no localStorage
+        saveProdutosToStorage(); 
         renderCarrinho();
         renderProdutos();
     }
@@ -168,12 +168,12 @@ function removerDoCarrinho(id) {
     }
 }
 
-// Função para buscar produtos da API
+
 function fetchProdutos() {
-    // Implementar lógica para buscar produtos da API
+    
 }
 
-// Função para carregar produtos do localStorage
+
 function loadProdutosFromStorage() {
     const storedProdutos = localStorage.getItem('produtos');
     if (storedProdutos) {

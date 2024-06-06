@@ -91,7 +91,7 @@ a {
 /* Estilos para botões */
 .botao {
   background-color: var(--laranja);
-  color: var(--cinza);
+  color: var(--preto);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
