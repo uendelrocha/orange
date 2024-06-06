@@ -1,37 +1,37 @@
 [
     {
         "id": 1,
-        "produto": "Notebook HP",
+        "produto": "O-Pad Retina",
         "preco": 2249.00,
         "estoque": 13,
-        "imagem": "computador1.jpg"
+        "imagem": "../img/retina.jpeg"
     },
     {
         "id": 2,
-        "produto": "Notebook Samsung",
+        "produto": "Notebook Orange Book Pro",
         "preco": 2199.00,
         "estoque": 58,
-        "imagem": "computador2.jpg"
+        "imagem": "../img/notebook.jpeg"
     },
     {
         "id": 3,
-        "produto": "Notebook Dell",
+        "produto": "O-Phone 24",
         "preco": 2499.00,
         "estoque": 77,
-        "imagem": "computador3.jpg"
+        "imagem": "../img/phone.jpeg"
     },
     {
         "id": 4,
-        "produto": "Notebook Lenovo",
+        "produto": "Chrome-Cast Orange",
         "preco": 2375.00,
         "estoque": 95,
-        "imagem": "computador4.jpg"
+        "imagem": "../img/chrome-cast.jpeg"
     },
     {
         "id": 5,
-        "produto": "Notebook Sony Vaio",
+        "produto": "Smart TV Orange Ultra View",
         "preco": 2999.00,
         "estoque": 43,
-        "imagem": "computador5.jpg"
+        "imagem": "../img/smart-tv.jpeg"
     }
 ]
