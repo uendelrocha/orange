@@ -4,34 +4,419 @@
         "produto": "O-Pad Retina",
         "preco": 2249.00,
         "estoque": 13,
-        "imagem": "../img/retina.jpeg"
+        "imagem": "01_o-pad_retina.webp"
     },
     {
         "id": 2,
         "produto": "Notebook Orange Book Pro",
         "preco": 2199.00,
         "estoque": 58,
-        "imagem": "../img/notebook.jpeg"
+        "imagem": "02_notebook_orange_book_pro.webp"
     },
     {
         "id": 3,
         "produto": "O-Phone 24",
         "preco": 2499.00,
         "estoque": 77,
-        "imagem": "../img/phone.jpeg"
+        "imagem": "02_notebook_orange_book_pro.webp"
     },
     {
         "id": 4,
         "produto": "Chrome-Cast Orange",
         "preco": 2375.00,
         "estoque": 95,
-        "imagem": "../img/chrome-cast.jpeg"
+        "imagem": "04_chrome_cast_orange.webp"
     },
     {
         "id": 5,
         "produto": "Smart TV Orange Ultra View",
         "preco": 2999.00,
         "estoque": 43,
-        "imagem": "../img/smart-tv.jpeg"
+        "imagem": "05_smart-tv_orange_ultra-view.webp"
+    },
+    {
+        "id": 6,
+        "produto": "Orange Gaming Laptop",
+        "preco": 3499.00,
+        "estoque": 20,
+        "imagem": "06_orange_gaming_laptop.webp"
+    },
+    {
+        "id": 7,
+        "produto": "Orange Wireless Earbuds",
+        "preco": 499.00,
+        "estoque": 150,
+        "imagem": "07_Orange_Wireless_Earbuds.webp"
+    },
+    {
+        "id": 8,
+        "produto": "Orange Smartwatch",
+        "preco": 999.00,
+        "estoque": 75,
+        "imagem": "08_Orange_Smartwatch.webp"
+    },
+    {
+        "id": 9,
+        "produto": "Orange Bluetooth Speaker",
+        "preco": 299.00,
+        "estoque": 200,
+        "imagem": "09_Orange_Bluetooth_Speaker.webp"
+    },
+    {
+        "id": 10,
+        "produto": "Orange VR Headset",
+        "preco": 1499.00,
+        "estoque": 30,
+        "imagem": "10_Orange_VR_Headset.webp"
+    },
+    {
+        "id": 11,
+        "produto": "Orange Drone",
+        "preco": 1999.00,
+        "estoque": 25,
+        "imagem": "11_Orange_Drone.webp"
+    },
+    {
+        "id": 12,
+        "produto": "Orange Home Assistant",
+        "preco": 799.00,
+        "estoque": 100,
+        "imagem": "12_Orange_Home_Assistant.webp"
+    },
+    {
+        "id": 13,
+        "produto": "Orange Fitness Tracker",
+        "preco": 599.00,
+        "estoque": 120,
+        "imagem": "13_Orange_Fitness_Tracker.webp"
+    },
+    {
+        "id": 14,
+        "produto": "Orange Portable Charger",
+        "preco": 199.00,
+        "estoque": 300,
+        "imagem": "14_Orange_Portable_Charger.webp"
+    },
+    {
+        "id": 15,
+        "produto": "Orange Smart Thermostat",
+        "preco": 899.00,
+        "estoque": 50,
+        "imagem": "15_Orange_Smart_Thermostat.webp"
+    },
+    {
+        "id": 160,
+        "produto": "Orange Smart Security Camera HD GSM",
+        "preco": 699.00,
+        "estoque": 40,
+        "imagem": "160_Orange_Security_Camera.webp"
+    },
+    {
+        "id": 161,
+        "produto": "Orange Smart Security Camera 4K GSM",
+        "preco": 899.00,
+        "estoque": 40,
+        "imagem": "161_Orange_Security_Camera_8K.webp"
+    },
+    {
+        "id": 170,
+        "produto": "Orange E-Reader Ink 8MB",
+        "preco": 1299.00,
+        "estoque": 40,
+        "imagem": "170_Orange_E-Reader_Ink_8MB.webp"
+    },
+    {
+        "id": 171,
+        "produto": "Orange E-Reader Paper 4MB GSM",
+        "preco": 999.00,
+        "estoque": 40,
+        "imagem": "171_Orange_E-Reader_Paper_4MB.webp"
+    },
+    {
+        "id": 180,
+        "produto": "Orange Gaming Console Tesla P40",
+        "preco": 5010.90,
+        "estoque": 10,
+        "imagem": "180_Orange_Gaming_Console.webp"
+    },
+    {
+        "id": 181,
+        "produto": "Orange Gaming Console & Server Tesla A100 80 GB",
+        "preco": 119900.00,
+        "estoque": 5,
+        "imagem": "181_Orange_Gaming_Console_A100.webp"
+    },
+    {
+        "id": 19,
+        "produto": "Orange Digital Camera",
+        "preco": 1799.00,
+        "estoque": 60,
+        "imagem": "19_Orange_Digital_Camera.webp"
+    },
+    {
+        "id": 200,
+        "produto": "Orange Smart Light Bulb",
+        "preco": 99.00,
+        "estoque": 500,
+        "imagem": "200_Orange_Smart_Light_Bulb.webp"
+    },
+    {
+        "id": 201,
+        "produto": "Orange Smart Light Bulb",
+        "preco": 99.00,
+        "estoque": 500,
+        "imagem": "201_Orange_Smart_Light_Bulb.webp"
+    },
+    {
+        "id": 210,
+        "produto": "Orange Wireless Mouse",
+        "preco": 149.00,
+        "estoque": 250,
+        "imagem": "210_Orange_Wireless_Mouse.webp"
+    },
+    {
+        "id": 211,
+        "produto": "Orange Wireless Mouse Light",
+        "preco": 149.00,
+        "estoque": 250,
+        "imagem": "211_Orange_Wireless_Mouse_Light.webp"
+    },
+    {
+        "id": 220,
+        "produto": "Orange Mechanical Keyboard",
+        "preco": 299.00,
+        "estoque": 150,
+        "imagem": "220_Orange_Mechanical_Keyboard.webp"
+    },
+    {
+        "id": 221,
+        "produto": "Orange Mechanical Keyboard Gamer",
+        "preco": 499.00,
+        "estoque": 150,
+        "imagem": "221_Orange_Mechanical_Keyboard_Gamer.webp"
+    },
+    {
+        "id": 230,
+        "produto": "Orange External Hard Drive SSD 2TB",
+        "preco": 499.00,
+        "estoque": 100,
+        "imagem": "230_Orange_External_Hard_Drive_SSD_2TB.webp"
+    },
+    {
+        "id": 231,
+        "produto": "Orange External Hard Drive M2 4TB",
+        "preco": 2999.00,
+        "estoque": 100,
+        "imagem": "231_Orange_External_Hard_Drive_M2_4TB.webp"
+    },
+    {
+        "id": 24,
+        "produto": "Orange Smart Plug",
+        "preco": 79.00,
+        "estoque": 400,
+        "imagem": "24_Orange_Smart_Plug.webp"
+    },
+    {
+        "id": 25,
+        "produto": "Orange Action Camera",
+        "preco": 999.00,
+        "estoque": 70,
+        "imagem": "25_Orange_Action_Camera.webp"
+    },
+    {
+        "id": 26,
+        "produto": "Orange Wireless Charger",
+        "preco": 199.00,
+        "estoque": 300,
+        "imagem": "26_Orange_Wireless_Charger.webp"
+    },
+    {
+        "id": 27,
+        "produto": "Orange Smart Doorbell",
+        "preco": 499.00,
+        "estoque": 90,
+        "imagem": "27_Orange_Smart_Doorbell.webp"
+    },
+    {
+        "id": 28,
+        "produto": "Orange Robot Vacuum",
+        "preco": 1499.00,
+        "estoque": 40,
+        "imagem": "28_Orange_Robot_Vacuum.webp"
+    },
+    {
+        "id": 290,
+        "produto": "Orange Smart Mirror",
+        "preco": 1999.00,
+        "estoque": 30,
+        "imagem": 290_Orange_Smart_Mirror.webp
+    },
+    {
+        "id": 291,
+        "produto": "Orange Smart Mirror Box",
+        "preco": 5999.00,
+        "estoque": 30,
+        "imagem": "291_Orange_Smart_Mirror_Box.webp"
+    },
+    {
+        "id": 30,
+        "produto": "Orange Electric Scooter",
+        "preco": 2499.00,
+        "estoque": 25,
+        "imagem": "30_Orange_Electric_Scooter.webp"
+    },
+    {
+        "id": 31,
+        "produto": "Orange Smart Glasses",
+        "preco": 1299.00,
+        "estoque": 50,
+        "imagem": "31_Orange_Smart_Glasses.webp"
+    },
+    {
+        "id": 32,
+        "produto": "Orange Digital Frame",
+        "preco": 499.00,
+        "estoque": 100,
+        "imagem": "32_Orange_Digital_Frame.webp"
+    },
+    {
+        "id": 33,
+        "produto": "Orange Smart Lock",
+        "preco": 799.00,
+        "estoque": 80,
+        "imagem": "33_Orange_Smart_Lock.webp"
+    },
+    {
+        "id": 34,
+        "produto": "Orange Portable Projector",
+        "preco": 1999.00,
+        "estoque": 30,
+        "imagem": "34_Orange_Portable_Projector.webp"
+    },
+    {
+        "id": 35,
+        "produto": "Orange Smart Scale",
+        "preco": 299.00,
+        "estoque": 150,
+        "imagem": "35_Orange_Portable_Projector.webp"
+    },
+    {
+        "id": 36,
+        "produto": "Orange Smart Fan",
+        "preco": 499.00,
+        "estoque": 100,
+        "imagem": "36_Orange_Smart_Fan.webp"
+    },
+    {
+        "id": 37,
+        "produto": "Orange Smart Coffee Maker",
+        "preco": 999.00,
+        "estoque": 60,
+        "imagem": "37_Orange_Smart_Coffee_Maker.webp"
+    },
+    {
+        "id": 38,
+        "produto": "Orange Smart Refrigerator",
+        "preco": 4999.00,
+        "estoque": 20,
+        "imagem": "38_Orange_Smart_Refrigerator.webp"
+    },
+    {
+        "id": 39,
+        "produto": "Orange Smart Oven",
+        "preco": 2999.00,
+        "estoque": 25,
+        "imagem": "39_Orange_Smart_Oven.webp"
+    },
+    {
+        "id": 40,
+        "produto": "Orange Smart Washing Machine",
+        "preco": 3999.00,
+        "estoque": 15,
+        "imagem": "40_Orange_Smart_Washing_Machine.webp"
+    },
+    {
+        "id": 41,
+        "produto": "Orange Smart Air Purifier",
+        "preco": 999.00,
+        "estoque": 70,
+        "imagem": "41_Orange_Smart_Air_Purifier.webp"
+    },
+    {
+        "id": 42,
+        "produto": "Orange Smart Water Bottle",
+        "preco": 199.00,
+        "estoque": 300,
+        "imagem": "42_Orange_Smart_Water_Bottle.webp"
+    },
+    {
+        "id": 43,
+        "produto": "Orange Smart Pet Feeder",
+        "preco": 499.00,
+        "estoque": 90,
+        "imagem": "43_Orange_Smart_Pet_Feeder.webp"
+    },
+    {
+        "id": 44,
+        "produto": "Orange Smart Garden",
+        "preco": 1999.00,
+        "estoque": 30,
+        "imagem": "44_Orange_Smart_Garden.webp"
+    },
+    {
+        "id": 45,
+        "produto": "Orange Smart Bed",
+        "preco": 4999.00,
+        "estoque": 20,
+        "imagem": "45_Orange_Smart_Bed.webp"
+    },
+    {
+        "id": 460,
+        "produto": "Orange Smart Desk",
+        "preco": 1999.00,
+        "estoque": 25,
+        "imagem": "460_Orange_Smart_Desk.webp"
+    },
+    {
+        "id": 461,
+        "produto": "Orange Smart Desk FlexH8 Combo",
+        "preco": 4499.00,
+        "estoque": 25,
+        "imagem": "461_Orange_Smart_Desk_Combo_FlexHeight.webp"
+    },
+    {
+        "id": 462,
+        "produto": "Orange Smart Desk FlexH8",
+        "preco": 3999.00,
+        "estoque": 25,
+        "imagem": "462_Orange_Smart_Desk_FlexH8.webp"
+    },
+    {
+        "id": 470,
+        "produto": "Orange Smart Chair",
+        "preco": 1499.00,
+        "estoque": 30,
+        "imagem": "470_Orange_Smart_Chair.webp"
+    },
+		    {
+        "id": 471,
+        "produto": "Orange Smart Chair FlexH8",
+        "preco": 1999.00,
+        "estoque": 30,
+        "imagem": "471_Orange_Smart_Chair_FlexH8.webp"
+    },
+    {
+        "id": 49,
+        "produto": "Orange Smart Bike",
+        "preco": 2999.00,
+        "estoque": 25,
+        "imagem": "49_Orange_Smart_Bike.webp"
+    },
+    {
+        "id": 50,
+        "produto": "Orange Smart Treadmill",
+        "preco": 3999.00,
+        "estoque": 15,
+        "imagem": "50_Orange_Smart_Treadmill.webp"
     }
 ]
