@@ -128,7 +128,7 @@ body {
   background-color: var(--branco);
   margin-bottom: 20px; /* Bottom margin only */
   }
-}
+
 
 h1, h2, h3 {
   font-size: var(--tamanho-titulo);
@@ -198,7 +198,7 @@ h1, h2, h3 {
 
 .botoes{
 
-    background-color: var(--laranja)
+    background-color: var(--laranja);
     height: 37px;
     width: 100px;
     color: var(--preto);
