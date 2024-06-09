@@ -18,7 +18,7 @@
         "produto": "O-Phone 24",
         "preco": 2499.00,
         "estoque": 77,
-        "imagem": "02_notebook_orange_book_pro.webp"
+        "imagem": "03_o-phone_24.webp"
     },
     {
         "id": 4,
@@ -162,10 +162,10 @@
     },
     {
         "id": 201,
-        "produto": "Orange Smart Light Bulb",
+        "produto": "Orange Smart Light Bulb Cam",
         "preco": 99.00,
         "estoque": 500,
-        "imagem": "201_Orange_Smart_Light_Bulb.webp"
+        "imagem": "201_Orange_Smart_Light_Bulb_Cam.webp"
     },
     {
         "id": 210,
@@ -249,7 +249,7 @@
         "produto": "Orange Smart Mirror",
         "preco": 1999.00,
         "estoque": 30,
-        "imagem": 290_Orange_Smart_Mirror.webp
+        "imagem": "290_Orange_Smart_Mirror.webp"
     },
     {
         "id": 291,
