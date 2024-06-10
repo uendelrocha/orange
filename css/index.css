@@ -20,9 +20,10 @@
 
 .cabecalho {
   display: flex; /* Permite posicionar elementos lado a lado */
-  width: 100%;
+  flex-wrap: nowrap;
+  width: 97%;
   justify-content: space-between; /* Distribui espaço entre logo e menu */
-  align-content: center; /* Alinha verticalmente ao centro (opcional) */
+  /*align-content: center; /* Alinha verticalmente ao centro (opcional) */
   background-color: transparent;
 }
 
@@ -197,12 +198,11 @@ h1, h2, h3 {
 }
 
 .botoes{
-
     background-color: var(--laranja);
     height: 37px;
     width: 100px;
-    color: var(--preto);
-    border: 1 ;
+    color: var(--branco);
+    border: none;
     font-size: 18px;
     align-items: center;
 }
@@ -214,4 +214,3 @@ h1, h2, h3 {
     size: 10;
 
 }
-

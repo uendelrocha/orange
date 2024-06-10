@@ -9,6 +9,8 @@
 div {
     margin-top: 0px; /* Top margin only */
     margin-bottom: 20px; /* Bottom margin only */
+    margin-left: -2px;
+    margin-right: -2px;
   }
 
 .card,.produto-card {
