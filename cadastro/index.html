@@ -1,104 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="../css/index.css"> 
+    <meta charset="UTF-8" />
+
+    <title>Cadastro | Orange</title>
+    <script src="../js/head.js"></script>
+
+
     <link rel="stylesheet" href="../css/cadastro.css">
-    <link rel="stylesheet" href="../css/fontawesome-free-web/css/all.css" /> 
-    <script defer src="js/cadastro.js"></script>
-    <script defer src="../js/index.js"></script>    
+    <link rel="stylesheet" href="../css/fontawesome-free-web/css/all.css" />
+
+    <script defer src="../js/cadastro.js"></script>
+    <script defer src="../js/index.js"></script>
 
 </head>
+
 <body>
     <div id="divCabecalho"></div>
     <div id="corpo">
-    <h1>Cadastro</h1>
-    <form id="form-cadastro">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" required>
+        <h1>Cadastro</h1>
+        <form id="form-cadastro">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
 
-        <label for="senha">Senha:</label>
-        <input type="password" name="senha" id="senha" required>
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha" required>
 
-        <h2>Endereço</h2>
+            <h2>Endereço</h2>
 
-        <label for="rua">Rua:</label>
-        <input type="text" name="rua" id="rua" required>
+            <label for="rua">Rua:</label>
+            <input type="text" name="rua" id="rua" required>
 
-        <label for="numero">Número:</label>
-        <input type="number" name="numero" id="numero" required>
+            <label for="numero">Número:</label>
+            <input type="number" name="numero" id="numero" required>
 
-        <label for="complemento">Complemento:</label>
-        <input type="text" name="complemento" id="complemento">
+            <label for="complemento">Complemento:</label>
+            <input type="text" name="complemento" id="complemento">
 
-        <label for="bairro">Bairro:</label>
-        <input type="text" name="bairro" id="bairro" required>
+            <label for="bairro">Bairro:</label>
+            <input type="text" name="bairro" id="bairro" required>
 
-        <label for="cidade">Cidade:</label>
-        <input type="text" name="cidade" id="cidade" required>
+            <label for="cidade">Cidade:</label>
+            <input type="text" name="cidade" id="cidade" required>
 
-        <label for="estado">Estado:</label>
-        <select name="estado" id="estado" required>
-            <option value="">Selecione o estado</option>
-            <option value="AC">Acre</option>
-            <option value="AL">Alagoas</option>
-            <option value="AP">Amapá</option>
-            <option value="AM">Amazonas</option>
-            <option value="BA">Bahia</option>
-            <option value="CE">Ceará</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espírito Santo</option>
-            <option value="GO">Goiás</option>
-            <option value="MA">Maranhão</option>
-            <option value="MT">Mato Grosso</option>
-            <option value="MS">Mato Grosso do Sul</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="PA">Pará</option>
-            <option value="PB">Paraíba</option>
-            <option value="PR">Paraná</option>
-            <option value="PE">Pernambuco</option>
-            <option value="PI">Piauí</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="RN">Rio Grande do Norte</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="RO">Rondônia</option>
-            <option value="RR">Roraima</option>
-            <option value="SC">Santa Catarina</option>
-            <option value="SP">São Paulo</option>
-            <option value="SE">Sergipe</option>
-            <option value="TO">Tocantins</option>
-        </select>
+            <label for="estado">Estado:</label>
+            <select name="estado" id="estado" required>
+                <option value="">Selecione o estado</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
 
-        <label for="cep">CEP:</label>
-        <input type="text" name="cep" id="cep" required>
+            <label for="cep">CEP:</label>
+            <input type="text" name="cep" id="cep" required>
 
-        <h2>Dados Pessoais</h2>
+            <h2>Dados Pessoais</h2>
 
-        <label for="cpf">CPF:</label>
-        <input type="text" name="cpf" id="cpf" required>
+            <label for="cpf">CPF:</label>
+            <input type="text" name="cpf" id="cpf" required>
 
-        <label for="nacionalidade">Nacionalidade:</label>
-        <input type="text" name="nacionalidade" id="nacionalidade">
+            <label for="nacionalidade">Nacionalidade:</label>
+            <input type="text" name="nacionalidade" id="nacionalidade">
 
-        <label for="sexo">Sexo:</label>
-        <select name="sexo" id="sexo" required>
-            <option value="">Selecione o sexo</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-            <option value="nao_binario">Não-binário</option>
-        </select>
-        <div id="nada">  </div>        
-    </form>
-    <div>
-        <a href="sucesso.html"><button class="botoes"> Enviar </button></a>
+            <label for="sexo">Sexo:</label>
+            <select name="sexo" id="sexo" required>
+                <option value="">Selecione o sexo</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <!-- <option value="nao_binario">Não-binário</option> -->
+            </select>
+            <div id="nada"> </div>
+        </form>
+        <div>
+            <a href="sucesso.html"><button class="botoes"> Enviar </button></a>
+        </div>
     </div>
-    </div>
-        <div id="nada">  </div>
-        <div id="divRodape"></div>
-    </body>
+    <div id="nada"> </div>
+    <div id="divRodape"></div>
+</body>
+
 </html>

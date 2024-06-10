@@ -8,7 +8,8 @@ var cabecalho =
                 <li><a href="../cadastro/index.html">Cadastro</a></li>
                 <li><a href="../principal/index.html">Produtos</a></li>
                 <li><a href="../carrinho/index.html">Carrinho</a></li>
-                <li><a href="../login/index.html"><button class="botoes">Login</button></a></li>
+                <li><a href="../login/index.html">Login</a></li>
+                <!-- <li><a href="../login/index.html"><button class="botoes">Login</button></a></li>-->
             
         </div>
     </div>`;
