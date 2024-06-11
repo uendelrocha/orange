@@ -1,5 +1,5 @@
 import { renderCarrinho, esvaziarCarrinho, loadCarrinhoFromSessionStorage } from './carrinho.js';
-import { produtos, fetchProdutos, loadProdutosFromLocalStorage } from './produtos.js';
+import { fetchProdutos, loadProdutosFromLocalStorage } from './produtos.js';
 
 export const root_imagem = "../img/produtos/"
 export const formatter = new Intl.NumberFormat('pt-br', {
@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const carrinhoDiv = document.getElementById('carrinho');
     if (carrinhoDiv) {
+        loadProdutosFromLocalStorage();
         loadCarrinhoFromSessionStorage();
         renderCarrinho();
     }
