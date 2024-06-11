@@ -1,4 +1,4 @@
-import { renderCarrinho, aumentarQuantidade, esvaziarCarrinho, loadCarrinhoFromSessionStorage } from './carrinho.js';
+import { renderCarrinho, esvaziarCarrinho, loadCarrinhoFromSessionStorage } from './carrinho.js';
 import { fetchProdutos, loadProdutosFromLocalStorage } from './produtos.js';
 
 export const root_imagem = "../img/produtos/"

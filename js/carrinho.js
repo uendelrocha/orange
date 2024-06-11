@@ -6,6 +6,7 @@ import { produtos, renderProdutos } from "./produtos.js";
 window.saveCarrinhoToSessionStorage = saveCarrinhoToSessionStorage;
 window.aumentarQuantidade = aumentarQuantidade;
 window.diminuirQuantidade = diminuirQuantidade;
+window.removerDoCarrinho = removerDoCarrinho;
 
 // Initialize the application
 import {
@@ -39,6 +40,7 @@ function carrinhoTemplate(item) {
             <span>${item.quantidade}</span>
             <button onclick="diminuirQuantidade(${item.id})">-</button>
             <button onclick="aumentarQuantidade(${item.id})">+</button>
+            <button onclick="removerDoCarrinho(${item.id})">x</button>
             <p>${produto ? produto.estoque : ''} disponíveis</p>
             <p>Sub-Total: ${formatter.format(item.preco * item.quantidade)}</p>
         </div>
@@ -102,7 +104,7 @@ export function diminuirQuantidade(id) {
 }
 
 // Função genérica para remover um item do carrinho
-function removerDoCarrinho(id) {
+export function removerDoCarrinho(id) {
     const item = carrinho.find(item => item.id === id);
     const produto = produtos.find(p => p.id === id);
     if (item && produto) {
