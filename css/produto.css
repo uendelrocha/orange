@@ -1,17 +1,17 @@
-#divProdutos{
+#divProdutos {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
     align-content: flex-start;
-}
-
-div {
+  }
+  
+  div {
     margin-top: 0px; /* Top margin only */
     margin-bottom: 20px; /* Bottom margin only */
   }
-
-.card{
+  
+  .card {
     width: 100%;
     min-width: 250px;
     max-width: 250px;
@@ -19,62 +19,61 @@ div {
     border-radius: 3px;
     margin: 10px;
     border: solid 1px #EEE;
-}
-
-.card-capa{
+  }
+  
+  .card-capa {
     width: 100%;
     height: 60%;
-}
-
-.card-capa img{
+  }
+  
+  .card-capa img {
     width: 100%;
     height: 100%;
     border-radius: 3px 3px 0px 0px;
-}
-
-.card-corpo{
+  }
+  
+  .card-corpo {
     width: 100%;
     height: 25%;
     padding: 10px;
     box-sizing: border-box;
-}
-
-.card-corpo-produto{
+  }
+  
+  .card-corpo-produto {
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 5px;
-}
-
-.card-add-carrinho{
+  }
+  
+  .card-add-carrinho {
     width: 100%;
     height: 15%;
     border-radius: 0px 0px 3px 3px;
     background-color: orange;
     cursor: pointer;
     color: white;
-
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.card-add-carrinho i{
+  }
+  
+  .card-add-carrinho i {
     margin-right: 10px;
-}
-
-.card-add-carrinho:hover {
+  }
+  
+  .card-add-carrinho:hover {
     background-color: #ee9919;
-}
-
-#produtos {
+  }
+  
+  #produtos {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     padding-bottom: 100px; /* Ajuste para não sobrepor o rodapé */
-}
-
-.produto {
+  }
+  
+  .produto {
     background: var(--branco);
     border: 1px solid #e7e407;
     border-radius: 10px;
@@ -83,20 +82,36 @@ div {
     box-shadow: 0 2px 5px rgba(236, 73, 9, 0.871);
     text-align: center;
     box-sizing: border-box;
-}
-
-.produto img {
+  }
+  
+  .produto img {
     width: 100%;
     height: auto;
-    /* border-radius: 10px;
-    margin-bottom: 10px; */
-}
-
-.produto h3 {
+  }
+  
+  .produto h3 {
     font-size: 1.2em;
     margin: 10px 0;
-}
-
-.produto p {
+  }
+  
+  .produto p {
     margin: 5px 0;
-}
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* For tablets and larger phones */
+  @media (max-width: 768px) {
+    .card {
+      padding: 15px;
+    }
+  }
+  
+  /* For mobile phones */
+  @media (max-width: 480px) {
+    .card {
+      padding: 10px;
+      font-size: 0.9em;
+    }
+  }
+  

@@ -1,5 +1,3 @@
-
-
 :root {
   /* Cores */
   --laranja: #FFA500;
@@ -17,7 +15,6 @@
 }
 
 /* Estilos para menus */
-
 .cabecalho {
   display: flex; /* Permite posicionar elementos lado a lado */
   width: 100%;
@@ -69,9 +66,26 @@
   footer {
     font-size: 12px;
   }
+
+  .cabecalho {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #menu li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  #menu li:last-child {
+    margin-bottom: 0;
+  }
 }
-
-
 
 /* Estilos para cards */
 .card {
@@ -127,7 +141,6 @@ body {
   font-family: var(--fonte-padrao);
   background-color: var(--branco);
   margin-bottom: 20px; /* Bottom margin only */
-  }
 }
 
 h1, h2, h3 {
@@ -135,81 +148,42 @@ h1, h2, h3 {
   color: var(--preto);
 }
 
-/*
-.cabecalho{
-  margin-right: 0;  
+#logo {
   display: flex;
-  flex-wrap: wrap;
-  position: fixed;
-  top: 0;  
-  right: 0;  
-  width: 100%;  
-  height: 5%;
-  justify-content: right;
-  align-content: right;
-  text-align: right;
-  background-color: transparent;
-  color: var(--laranja);
-}  */
-
-#logo{
-    display: flex;
-    width: 50%;    
-    justify-content: left;
-    align-content: space-around;
-    text-align: center;
-    background-color: var(--branco)
-}
-
-
-
-/*#logo_top{
-  display: flex;
-  width: 100%;    
+  width: 50%;
   justify-content: left;
   align-content: space-around;
-  text-align: left;
-  background-color: transparent
+  text-align: center;
+  background-color: var(--branco);
 }
 
-
-
-#menu{
-    display: flex;
-    width: 50%;    
-    justify-content: flex-end;
-    align-content: space-between;
-    text-align: right;
-    align-items: right;
-    font-size: 20px;
-   
-} */
-
-#corpo{
-    margin-top: 40px; /* Ajuste para compensar a altura do cabeçalho */
-    padding: 10px;
-    display: flexbox;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 80%;
-    justify-content: center;
-    align-content: flex-start;
-    text-align: center;
-    background-color: var(--branco)    
+#corpo {
+  margin-top: 40px; /* Ajuste para compensar a altura do cabeçalho */
+  padding: 10px;
+  display: flexbox;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 80%;
+  justify-content: center;
+  align-content: flex-start;
+  text-align: center;
+  background-color: var(--branco);
 }
 
-
-
-#rodape{
-    display: flexbox;
-    flex-wrap: wrap;
-    width: 100%; 
-    height: 10%;   
-    justify-content: flex-end;
-    position: relative;
-    align-content: center;
-    text-align: center;
-    background-color: var(--laranja-claro)
+#rodape {
+  display: flexbox;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 10%;
+  justify-content: flex-end;
+  position: relative;
+  align-content: center;
+  text-align: center;
+  background-color: var(--laranja-claro);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
 }
 
 #divRodape {
@@ -217,27 +191,84 @@ h1, h2, h3 {
   color: var(--preto);
   text-align: center;
   padding: 10px 0;
- 
-  bottom: 0;
   width: 100%;
 }
 
-.botoes{
+.botoes {
+  background-color: var(--laranja);
+  height: 37px;
+  width: 100px;
+  color: var(--preto);
+  border: 1;
+  font-size: 18px;
+  align-items: center;
+}
 
-    background-color: var(--laranja)
-    height: 37px;
-    width: 100px;
+.input-text {
+  background-color: #EEE;
+  border: solid 1px #ccc;
+  padding: 10px;
+  size: 10;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and larger phones */
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+
+  .botao, .botao-compra {
+    padding: 8px 16px;
+  }
+
+  #corpo {
+    padding: 5px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .card {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .botao, .botao-compra {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
+
+  #corpo {
+    padding: 5px;
+  }
+
+  #logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #rodape {
+    padding: 5px;
+    font-size: 0.8em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #divRodape {
+    background-color: transparent;
     color: var(--preto);
-    border: 1 ;
-    font-size: 18px;
-    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  body {
+    margin-bottom: 70px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5em;
+  }
 }
-
-.input-text{
-    background-color: #EEE;
-    border: solid 1px #ccc;
-    padding: 10px;  
-    size: 10;
-
-}
-

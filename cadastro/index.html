@@ -15,7 +15,7 @@
     <div id="divCabecalho"></div>
     <div id="corpo">
     <h1>Cadastro</h1>
-    <form id="form-cadastro" action="/cadastrar.php" method="post">
+    <form id="form-cadastro">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome" required>
 
@@ -83,7 +83,7 @@
         <input type="text" name="cpf" id="cpf" required>
 
         <label for="nacionalidade">Nacionalidade:</label>
-        <input type="text" name="nacionalidade" id="nacionalidade" required>
+        <input type="text" name="nacionalidade" id="nacionalidade">
 
         <label for="sexo">Sexo:</label>
         <select name="sexo" id="sexo" required>
@@ -92,15 +92,11 @@
             <option value="feminino">Feminino</option>
             <option value="nao_binario">Não-binário</option>
         </select>
-        
-        
-            <label for="idade">Idade:</label>
-            <input type="number" name="idade" id="idade" required>
-            <div id="nada">  </div>
-        <div>
-            <button type="submit" class="botoes"> Enviar </button>
-        </div>
-
+        <div id="nada">  </div>        
+    </form>
+    <div>
+        <a href="sucesso.html"><button class="botoes"> Enviar </button></a>
+    </div>
     </div>
         <div id="nada">  </div>
         <div id="divRodape"></div>
