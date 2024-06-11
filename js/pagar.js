@@ -30,9 +30,9 @@ function renderCarrinho() {
             <p>&nbsp R$: ${item.preco.toFixed(2)} &nbsp</p>
             <p>&nbsp Quantidade: &nbsp </p>
             <span>  ${item.quantidade} &nbsp</span>
-            <button onclick="diminuirQuantidade(${item.id} &nbsp )">-</button>
-            <button onclick="aumentarQuantidade(${item.id} &nbsp )">+</button>
-            <p>&nbsp Estoque: &nbsp ${produtoOriginal ? produtoOriginal.estoque : '  '} &nbsp </p>
+            
+            
+            
             <p>&nbsp Sub-Total R$: ${(item.preco * item.quantidade).toFixed(2)} &nbsp</p>
         `;
         carrinhoContainer.appendChild(itemElement);
@@ -48,14 +48,14 @@ function renderCarrinho() {
         });
     }
 
-    // Botão "Pagar"
-    const pagarButton = document.getElementById('pagar');
+    // Botão "confirmar"
+    const pagarButton = document.getElementById('confirmar');
     if (pagarButton) {
         pagarButton.addEventListener('click', () => {
             // Salvar carrinho no localStorage antes de prosseguir para a página de pagamento
             localStorage.setItem('carrinho', JSON.stringify(carrinho));
             // Redirecionar para a página pagar.html
-            window.location.href = '../principal/pagar.html';
+            window.location.href = '../principal/pago.html';
         });
     }
 }
