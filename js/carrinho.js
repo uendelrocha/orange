@@ -4,6 +4,8 @@ import { produtos, renderProdutos } from "./produtos.js";
 
 // Tornando as funções acessíveis globalmente
 window.saveCarrinhoToSessionStorage = saveCarrinhoToSessionStorage;
+window.aumentarQuantidade = aumentarQuantidade;
+window.diminuirQuantidade = diminuirQuantidade;
 
 // Initialize the application
 import {
@@ -66,9 +68,11 @@ export function adicionarAoCarrinho(id, qtty = 1, mostrarBalao = true) {
 }
 
 // Função genérica para aumentar a quantidade de um item no carrinho
-function aumentarQuantidade(id) {
+export function aumentarQuantidade(id) {
     const item = carrinho.find(item => item.id === id);
     const produto = produtos.find(p => p.id === id);
+    console.log('Produto: ' + produto);
+    console.log("Item: " + item);
     if (item && produto && produto.estoque > 0) {
         item.quantidade++;
         //produto.estoque--;
@@ -80,7 +84,7 @@ function aumentarQuantidade(id) {
 }
 
 // Função genérica para diminuir a quantidade de um item no carrinho
-function diminuirQuantidade(id) {
+export function diminuirQuantidade(id) {
     const item = carrinho.find(item => item.id === id);
     const produto = produtos.find(p => p.id === id);
     if (item && produto) {
