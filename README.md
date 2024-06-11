@@ -8,4 +8,4 @@ Foram aplicadas mudanças no código para melhorar a manutenção e aproveitamen
 
 Foi criado um script em python na raiz do projeto que sobe o servidor HTTP na pasta. Para executar, vá pelo terminal (ou prompt de comando) até a pasta do projeto em seu computador e execute `python http_fileserver.py`. Após, abra o browser Chrome (ou outro de sua preferência) e informe o caminho `http://localhost:8000/` para navegar entre os arquivos. Encontre e abra o html desejado. 
 
-![image](https://github.com/uendelrocha/orange/assets/11482478/e240ff4c-9ca1-4881-879d-eed74c66817b)
+![image](https://github.com/uendelrocha/orange/assets/11482478/dc2acc4d-ba3c-4ebc-b096-284bbc7734d1)
