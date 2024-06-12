@@ -70,6 +70,7 @@ function comprar(id) {
 
 // Função genérica para carregar os produtos do localStorage
 export function loadProdutosFromLocalStorage() {
+    console.log('Carregando produtos do localStorage');
     const produtosStorage = localStorage.getItem('produtos');
     if (produtosStorage) {
         produtos = JSON.parse(produtosStorage);

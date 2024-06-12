@@ -1,5 +1,11 @@
-import { renderCarrinho, esvaziarCarrinho, loadCarrinhoFromSessionStorage } from './carrinho.js';
+import { 
+    renderCarrinho,
+    loadCarrinhoFromSessionStorage,
+} from './carrinho.js';
+
 import { fetchProdutos, loadProdutosFromLocalStorage } from './produtos.js';
+
+window.showModal = showModal;
 
 export const root_imagem = "../img/produtos/"
 export const formatter = new Intl.NumberFormat('pt-br', {
@@ -45,7 +51,7 @@ export function showBalloon(miliseconds = 1500) {
     }
 
 // Função genérica para mostrar um modal
-function showModal() {
+export function showModal() {
     const modal = document.getElementById('modal');
     modal.style.display = 'block';
 }
@@ -58,10 +64,10 @@ function closeModal() {
 
 // Função genérica para inicializar a aplicação
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Inicializando Produtos');
 
     const produtosDiv = document.getElementById('produtos');
     if (produtosDiv) {
+        console.log('Inicializando Produtos');
         // Carregar produtos do localStorage
         loadProdutosFromLocalStorage();
         loadCarrinhoFromSessionStorage();
@@ -70,14 +76,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const carrinhoDiv = document.getElementById('carrinho');
     if (carrinhoDiv) {
+        console.log('Inicializando Carrinho');
         loadProdutosFromLocalStorage();
         loadCarrinhoFromSessionStorage();
         renderCarrinho();
     }
 
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+    
     // Botão para limpar o carrinho
-    const clearCartButton = document.getElementById('esvaziarCarrinhoButton');
-    if (clearCartButton) {
-        clearCartButton.addEventListener('click', esvaziarCarrinho);
+    const footerButton = document.getElementById('footer-button');
+    if (footerButton) {
+        if (carrinhoDiv) {
+            footerButton.textContent = 'Fechar Pedido';
+            footerButton.addEventListener('click', showModal);
+        } else if (produtosDiv) {
+            footerButton.textContent = 'Carrinho';
+            footerButton.addEventListener('click', () => {
+                window.location.href = '../carrinho/index.html';
+            });
+        } else {
+            footerButton.textContent = 'Continuar comprando';
+            footerButton.addEventListener('click', () => {
+                // window.history.back();
+                window.location.href = '../principal/index.html';
+            });
+        }
+        //footerButton.addEventListener('click', comprar);
     }
 });

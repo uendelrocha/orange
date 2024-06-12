@@ -6,22 +6,24 @@
         <title>Carrinho | Orange</title>
         <script src="../js/head.js"></script>
 
-        <link rel="stylesheet" href="../css/carrinho.css">
+        <link rel="stylesheet" href="../css/styles.css">
 
         <script defer src="../js/index.js"></script> 
         <script defer type="module" defer src="../js/carrinho.js"></script>
         <script defer type="module" defer src="../js/comum.js"></script>
     </head>
     <body>
-        <div id="divCabecalho"></div>
-        <div id="corpo">
-            <div id="carrinho"></div>
-            <div id="total"></div>
-            <h4>Página do carrinho</h4>
-            <!-- Botão para esvaziar o carrinho -->
-            <button id="esvaziarCarrinhoButton">Esvaziar Carrinho</button>
-            <div id="divRodape"></div>
-        </div>
+        <header>
+            <div id="cabecalho"></div>
+        </header>
+        <main>
+            <section id="carrinho" class="cart">
+            </section>
+            <aside id="resumo-carrinho" class="cart-summary"></aside>
+        </main>
+        <footer>
+            <div id="rodape"></div>
+        </footer>
     </body>
 </html>
 

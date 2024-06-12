@@ -1,13 +1,15 @@
+/*
 body {
-    margin-top: 0px; /* Ajuste para compensar a altura do cabeçalho */
-    margin: 1;
+    margin-top: 0px;
+    margin: 1px;
     padding: 10px;
     background-color: Var(--branco);
   }
+  */
   
   div {
     margin-top: 0px; /* Top margin only */
-    margin-bottom: 20px; /* Bottom margin only */
+    /*margin-bottom: 20px; /* Bottom margin only */
   }
 
   h1 {
@@ -33,13 +35,7 @@ body {
   padding: 10px;
   border: solid 1px gray;
   border-radius: 3px;
-}
-
-.card {
-  width: 100px;
-  height: 100px;
-  background-color: orange;
-  box-shadow: 10px 2px 0px rgb(47, 46, 46);
+  background-color: lightsalmon;
 }
 
   input,
@@ -67,6 +63,13 @@ body {
   input[type="submit"]:hover {
     background-color:Var(--laranja-claro);
     color: var(--laranja)
+  }
+
+  .input-text{
+    background-color: #EEE;
+    border: solid 1px #ccc;
+    padding: 10px;  
+    size: 10;
   }
   
   .container {
