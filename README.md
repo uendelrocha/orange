@@ -34,3 +34,7 @@ Clique no link da pasta `principal` para abrir a página principal do projeto ou
 
 #### 4.3 Confirmação de compra (simulação)
 ![image](https://github.com/uendelrocha/orange/assets/11482478/66f678d6-a861-4165-84fa-8b44c85b0def)
+
+#### 4.4 Responsividade
+![image](https://github.com/uendelrocha/orange/assets/11482478/b29f197e-b91e-4b40-b12b-2382ad704809)
+
