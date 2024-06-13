@@ -25,5 +25,5 @@ Foi criado um script em python na raiz do projeto que sobe o servidor HTTP na pa
 
 ### 4. Abra o html principal do projeto. 
 Clique no link da pasta `principal` para abrir a página principal do projeto ou informe a url `http://localhost:8000/principal`
-![image](https://github.com/uendelrocha/orange/assets/11482478/16efcf50-b350-4505-862c-b62e0ca09333)
+![image](https://github.com/uendelrocha/orange/assets/11482478/5d524505-f42c-4a21-b2c7-2fbe01b351e5)
 
