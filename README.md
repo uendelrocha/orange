@@ -25,5 +25,12 @@ Foi criado um script em python na raiz do projeto que sobe o servidor HTTP na pa
 
 ### 4. Abra o html principal do projeto. 
 Clique no link da pasta `principal` para abrir a página principal do projeto ou informe a url `http://localhost:8000/principal`
+
+#### 4.1 Tela principal (Produtos)
 ![image](https://github.com/uendelrocha/orange/assets/11482478/5d524505-f42c-4a21-b2c7-2fbe01b351e5)
 
+#### 4.2 Carrinho
+![image](https://github.com/uendelrocha/orange/assets/11482478/9784cec2-945b-4bcf-a8e7-fcd2930f8466)
+
+#### 4.3 Confirmação de compra (simulação)
+![image](https://github.com/uendelrocha/orange/assets/11482478/66f678d6-a861-4165-84fa-8b44c85b0def)
