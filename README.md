@@ -4,7 +4,7 @@ Grupo: Alan Alves Araújo, Eduardo Andrade Lima e Uendel Andrade Rocha
 Professor: Eduardo Lino
 
 ## HTTP Server e App Server obrigatórios
-Foram aplicadas mudanças no código para melhorar a manutenção e aproveitamentos os métodos nos scripts. Assim, a partir da versão liberada no dia 9/6/2024, exige-se que o código seja executado a partir de um servidor HTTP e de um servidor de aplicação com rota /api/produtos. 
+Foram aplicadas mudanças no código para melhorar a manutenção, aproveitar métodos e estilos. Assim, a partir da versão liberada no dia 9/6/2024, exige-se que o código seja executado a partir de um servidor HTTP e de um servidor de aplicação com rota /api/produtos.
 
 ### 1. Suba localmente o servidor aplicação python flask
 Para executar, vá pelo terminal (ou prompt de comando) até a pasta da api do projeto Orange em seu computador e execute `python app.py`. 
