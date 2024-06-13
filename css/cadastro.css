@@ -6,6 +6,20 @@ body {
     background-color: Var(--branco);
   }
   */
+
+  .corpo{
+    margin-top: 40px; /* Ajuste para compensar a altura do cabeçalho */
+    padding: 10px;
+    display: flexbox;
+    flex-wrap: wrap;
+    width: 60%;
+    height: 80%;
+    justify-content: left;
+    align-content: flex-start;
+    text-align: left;
+    background-color: var(--branco);
+
+  }
   
   div {
     margin-top: 0px; /* Top margin only */
@@ -88,18 +102,5 @@ body {
     margin-bottom: 10px; /* Increased spacing between fields */
   }
 
-  .corpo{
-    margin-top: 40px; /* Ajuste para compensar a altura do cabeçalho */
-    padding: 10px;
-    display: flexbox;
-    flex-wrap: wrap;
-    width: 60%;
-    height: 80%;
-    justify-content: left;
-    align-content: flex-start;
-    text-align: left;
-    background-color: var(--branco);
-
-  }
 
   

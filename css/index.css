@@ -21,10 +21,10 @@ body {
 }
 
 main {
-  /*display: flex;*/
-  /*flex-wrap: wrap;*/
-  width: 95%;
-  /*justify-content: center;*/
-  row-gap: 20px;
-  padding-bottom: 20px;
+  display: flex;
+  /*padding: 50px 20px;*/
+  padding-bottom: 50px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  /*row-gap: 50px;*/
 }

@@ -68,18 +68,39 @@ function comprar(id) {
     window.location.href = '../carrinho/index.html';
 }
 
+export function getProdutosFromLocalStorage() {
+    var result = [];
+    const produtosStorage = localStorage.getItem('produtos');
+    if (produtosStorage) {
+        result = JSON.parse(produtosStorage);
+    }
+
+    return result;
+}
+
 // Função genérica para carregar os produtos do localStorage
 export function loadProdutosFromLocalStorage() {
     console.log('Carregando produtos do localStorage');
-    const produtosStorage = localStorage.getItem('produtos');
-    if (produtosStorage) {
-        produtos = JSON.parse(produtosStorage);
-    }
+    produtos = getProdutosFromLocalStorage();
+    console.log('Produtos em LocalStorage: ' + produtos.length);
 }
 
 // Função genérica para salvar os produtos no localStorage
 export function saveProdutosToLocalStorage() {
+    console.log('Salvando produtos no localStorage');
     localStorage.setItem('produtos', JSON.stringify(produtos));
+}
+
+// Função genérica para atualizar o estoque de um produto
+export function atualizarEstoque(produto, quantidade) {
+
+    const produtoIndex = produtos.findIndex(p => p.id === produto.id);
+    console.log('ProdutoIndex: ' + produtoIndex);
+    if (produtoIndex !== -1) {
+        console.log('Atualizando estoque do produto: ' + produto.produto);
+        produtos[produtoIndex].estoque += quantidade;
+        saveProdutosToLocalStorage();
+    }
 }
 
 

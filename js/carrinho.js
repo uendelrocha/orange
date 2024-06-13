@@ -1,5 +1,5 @@
 // Variáveis globais de comum.js
-import { root_imagem, formatter } from "./comum.js";
+import { root_imagem, formatter, renderPage } from "./comum.js";
 import { produtos, renderProdutos } from "./produtos.js";
 
 // Tornando as funções acessíveis globalmente
@@ -17,10 +17,16 @@ import {
 
 export let carrinho = [];
 
+
+export function getItensDoCarrinho() {
+    return carrinho;
+}
+
 // Função genérica para renderizar carrinho
 export function renderCarrinho() {
     console.log('Renderizando carrinho');
     renderCartIcon();
+    renderPage();
     const carrinhoContainer = document.getElementById('carrinho');
     if (carrinhoContainer) {
         const resumoContainer = document.getElementById('resumo-carrinho');
@@ -39,7 +45,7 @@ export function renderCarrinho() {
                 <p class="subtotal">${formatter.format(valor_subtotal)}</p>
             </div>
             <div class="subtotal-checkout">
-                <button class="checkout-button" onclick="showModal()">Fechar pedido</button>
+                <button class="checkout-button" onclick="checkout()">Concluir pedido</button>
             </div>
             `;
     };
@@ -105,7 +111,7 @@ export function adicionarAoCarrinho(id, qtty = 1, mostrarBalao = true) {
         renderCarrinho();
 
         if (mostrarBalao) {
-            showBalloon();
+            showBalloon("Produto adicionado ao carrinho!");
         }
     }
 }
@@ -173,11 +179,13 @@ export function esvaziarCarrinho() {
     });
  */
     //saveCarrinhoToSessionStorage();
-    localStorage.clear();
+    //localStorage.clear();
     sessionStorage.clear();
     renderProdutos();
     renderCarrinho();
 }
+
+
 
 // Função genérica para carregar o carrinho do sessionStorage
 export function loadCarrinhoFromSessionStorage() {
@@ -192,6 +200,10 @@ export function loadCarrinhoFromSessionStorage() {
 // Função genérica para salvar o carrinho no sessionStorage
 export function saveCarrinhoToSessionStorage() {
   sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+export function getCarrinhoFromSessionStore() {
+    return JSON.parse(sessionStorage.getItem('carrinho'));
 }
 
 // Função genérica que retorna a quantidade de itens no carrinho
