@@ -7,5 +7,7 @@ document.write(`
     <link rel="icon" href="../img/favicon_16x16.ico" sizes="16x16" type="image/x-icon">
 
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/fontawesome-free-web/css/all.css" />        
 `);
